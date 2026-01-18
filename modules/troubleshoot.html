@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fix common 3D printing problems - stringing, warping, adhesion issues and more with LayerBEE">
+    <title>Module 3: Troubleshooting - LayerBEE</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../mascot/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../mascot/favicon-16.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/module.css">
+    <link rel="stylesheet" href="../css/tutor.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../mascot/layerbee-circle-logo.png" alt="" class="logo-img" aria-hidden="true">
+                <span class="logo-text">LayerBEE</span>
+            </a>
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#modules" class="nav-link">Learn</a></li>
+                    <li><a href="troubleshoot.html" class="nav-link active">Fix Problems</a></li>
+                    <li><a href="business.html" class="nav-link">Start Selling</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon-light">☀️</span>
+                    <span class="theme-icon-dark">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="module-content">
+        <section class="module-header-section">
+            <a href="../index.html#modules" class="back-link">← Back to Modules</a>
+            <span class="module-badge">Module 03</span>
+            <h1>Troubleshooting Guide</h1>
+            <p class="module-description">
+                Fix common 3D printing problems fast! Click any issue below to see the solution.
+            </p>
+        </section>
+
+        <!-- Quick Problem Finder -->
+        <section class="lesson" id="quick-find">
+            <h2>What's Wrong With Your Print?</h2>
+
+            <div class="parts-grid">
+                <a href="#adhesion" class="part-card" style="text-decoration: none; color: inherit;">
+                    <div class="part-icon">📤</div>
+                    <h4>Not Sticking</h4>
+                    <p>Print lifting, curling, or not sticking to bed</p>
+                </a>
+                <a href="#stringing" class="part-card" style="text-decoration: none; color: inherit;">
+                    <div class="part-icon">🕸️</div>
+                    <h4>Stringing</h4>
+                    <p>Thin strings between parts of your print</p>
+                </a>
+                <a href="#warping" class="part-card" style="text-decoration: none; color: inherit;">
+                    <div class="part-icon">🌊</div>
+                    <h4>Warping</h4>
+                    <p>Corners lifting up from the bed</p>
+                </a>
+                <a href="#layer-issues" class="part-card" style="text-decoration: none; color: inherit;">
+                    <div class="part-icon">📊</div>
+                    <h4>Layer Problems</h4>
+                    <p>Gaps, shifts, or rough layers</p>
+                </a>
+                <a href="#clogging" class="part-card" style="text-decoration: none; color: inherit;">
+                    <div class="part-icon">🚫</div>
+                    <h4>Clogged Nozzle</h4>
+                    <p>No filament coming out or partial extrusion</p>
+                </a>
+                <a href="#quality" class="part-card" style="text-decoration: none; color: inherit;">
+                    <div class="part-icon">✨</div>
+                    <h4>Poor Quality</h4>
+                    <p>Blobs, zits, or rough surfaces</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Problem 1: Bed Adhesion -->
+        <section class="lesson" id="adhesion">
+            <h2>Problem: Print Not Sticking to Bed</h2>
+
+            <div class="diagram">
+                <div class="diagram-title">What Good vs Bad Adhesion Looks Like</div>
+                <pre class="ascii-diagram">
+    GOOD FIRST LAYER              BAD FIRST LAYER
+    ══════════════════            ═══  ═══  ═══
+    ══════════════════            ═══  ═══  ═══
+    Lines are flat,               Lines are round,
+    slightly squished             gaps between them
+                </pre>
+            </div>
+
+            <h3>Quick Fixes (Try These First!)</h3>
+
+            <div class="steps-list">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Clean Your Bed</h4>
+                        <p>Wipe with isopropyl alcohol (90%+). Oils from your fingers can prevent adhesion. This fixes 50% of adhesion problems!</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Level the Bed</h4>
+                        <p>The nozzle might be too far from the bed. Re-level or use Z-offset to get closer. Paper should just drag when leveling.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Increase Bed Temperature</h4>
+                        <p>Try 5-10°C higher. PLA: 60-65°C. PETG: 75-85°C.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Add a Brim</h4>
+                        <p>In your slicer, add a brim (5-10mm). This gives more surface area to stick.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Still Not Working?</h3>
+
+            <div class="tip-box">
+                <strong>Adhesion Helpers:</strong>
+                <ul>
+                    <li><strong>Glue stick</strong> - Apply thin layer, let dry. Works great on glass beds!</li>
+                    <li><strong>Hairspray</strong> - Light coat of unscented hairspray</li>
+                    <li><strong>Painter's tape</strong> - Blue tape works well for PLA</li>
+                    <li><strong>PEI sheet</strong> - Upgrade your bed surface for best adhesion</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Problem 2: Stringing -->
+        <section class="lesson" id="stringing">
+            <h2>Problem: Stringing / Oozing</h2>
+
+            <p>Those annoying thin strings between parts of your print? Here's how to fix them.</p>
+
+            <div class="diagram">
+                <div class="diagram-title">What Causes Stringing</div>
+                <pre class="ascii-diagram">
+    Nozzle moves here ─────────────────────▶ But plastic oozes out
+         │                                        during travel!
+         ▼                                           │
+    ┌─────────┐                             ┌─────────┐
+    │  Part A │  ~~~~~~~~string~~~~~~~~~    │  Part B │
+    └─────────┘                             └─────────┘
+                </pre>
+            </div>
+
+            <h3>The Fix: Retraction Settings</h3>
+
+            <p>Retraction pulls filament back when the nozzle travels, preventing ooze.</p>
+
+            <div class="filament-table">
+                <div class="filament-row header">
+                    <span>Setting</span>
+                    <span>Bowden Tube</span>
+                    <span>Direct Drive</span>
+                    <span>Notes</span>
+                </div>
+                <div class="filament-row pla">
+                    <span>Distance</span>
+                    <span>4-8mm</span>
+                    <span>0.5-2mm</span>
+                    <span>How far to pull back</span>
+                </div>
+                <div class="filament-row petg">
+                    <span>Speed</span>
+                    <span>40-60mm/s</span>
+                    <span>25-40mm/s</span>
+                    <span>How fast to retract</span>
+                </div>
+            </div>
+
+            <h3>Other Stringing Fixes</h3>
+
+            <div class="steps-list">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Lower Temperature</h4>
+                        <p>Try 5-10°C lower. Hotter plastic is more runny and oozes more.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Increase Travel Speed</h4>
+                        <p>Faster moves = less time for oozing. Try 150-200mm/s for travel moves.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Dry Your Filament</h4>
+                        <p>Wet filament causes extra oozing. Dry it in a food dehydrator or filament dryer.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Enable "Combing"</h4>
+                        <p>This setting keeps travel moves inside the print, hiding any strings.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>Quick Remove:</strong> Minor stringing can be removed with a heat gun (briefly!) or by carefully picking off with tweezers.
+            </div>
+        </section>
+
+        <!-- Problem 3: Warping -->
+        <section class="lesson" id="warping">
+            <h2>Problem: Warping / Corner Lifting</h2>
+
+            <p>When corners of your print curl up from the bed. Common with larger prints and certain materials.</p>
+
+            <div class="diagram">
+                <div class="diagram-title">Why Warping Happens</div>
+                <pre class="ascii-diagram">
+    Hot plastic cools and shrinks
+           │
+           ▼
+    ┌──────────────────────┐
+    │   Printed layers     │   ← Top layers shrink
+    │                      │
+    │                      │
+    └──────────────────────┘
+           ↗            ↖
+      Corners pull up as layers above shrink
+                </pre>
+            </div>
+
+            <h3>Prevention is Key</h3>
+
+            <div class="steps-list">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Use a Heated Bed</h4>
+                        <p>Keep the bed warm to slow cooling. PLA: 60°C, PETG: 80°C, ABS: 100-110°C</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Eliminate Drafts</h4>
+                        <p>Keep windows closed and AC vents away. Cold air causes uneven cooling.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Use a Brim or Raft</h4>
+                        <p>Brims add grip at edges. Rafts provide a stable base for the whole print.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Add Mouse Ears</h4>
+                        <p>Small discs at corners (in slicer or design) add extra adhesion where needed.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <strong>ABS and ASA:</strong> These materials warp the most! Use an enclosure (even a cardboard box) to keep heat in. Consider switching to PETG for less warping.
+            </div>
+        </section>
+
+        <!-- Problem 4: Layer Issues -->
+        <section class="lesson" id="layer-issues">
+            <h2>Problem: Layer Issues</h2>
+
+            <h3>Layer Shifting</h3>
+            <p>When layers suddenly shift to one side, creating a "staircase" effect.</p>
+
+            <div class="comparison-box">
+                <div class="comparison-item bad">
+                    <h4>Loose Belts</h4>
+                    <p>Belts should twang like a guitar string. Tighten if floppy.</p>
+                </div>
+                <div class="comparison-item bad">
+                    <h4>Printing Too Fast</h4>
+                    <p>Slow down! Stepper motors can skip steps at high speeds.</p>
+                </div>
+                <div class="comparison-item bad">
+                    <h4>Loose Pulleys</h4>
+                    <p>Check that set screws on pulleys are tight.</p>
+                </div>
+            </div>
+
+            <h3>Layer Gaps / Under-Extrusion</h3>
+            <p>Gaps in layers or walls that look thin and weak.</p>
+
+            <div class="steps-list">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Check Filament Path</h4>
+                        <p>Make sure filament feeds smoothly. No tangles on the spool!</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Increase Flow Rate</h4>
+                        <p>Try 105-110% flow rate in your slicer to push more plastic.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Check Nozzle</h4>
+                        <p>Partial clogs cause under-extrusion. Do a cold pull to clean.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Increase Temperature</h4>
+                        <p>Filament might not be melting fast enough. Try 5-10°C higher.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Z-Banding / Inconsistent Layers</h3>
+            <p>Horizontal lines or waves visible on the print surface.</p>
+
+            <div class="tip-box">
+                <strong>Common Causes:</strong>
+                <ul>
+                    <li>Z-rod needs lubrication (use PTFE-based lube)</li>
+                    <li>Z-rod is bent (shine flashlight behind it to check)</li>
+                    <li>Inconsistent bed temperature (PID tune your bed)</li>
+                    <li>Loose Z-axis wheels or lead screw nut</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Problem 5: Clogged Nozzle -->
+        <section class="lesson" id="clogging">
+            <h2>Problem: Clogged Nozzle</h2>
+
+            <p>Nothing coming out? Partial extrusion? Here's how to fix it.</p>
+
+            <h3>Signs of a Clog</h3>
+            <div class="comparison-box">
+                <div class="comparison-item bad">
+                    <h4>No Extrusion</h4>
+                    <p>Extruder clicking but nothing coming out</p>
+                </div>
+                <div class="comparison-item bad">
+                    <h4>Inconsistent Flow</h4>
+                    <p>Filament comes out in spurts or thin</p>
+                </div>
+                <div class="comparison-item bad">
+                    <h4>Grinding</h4>
+                    <p>Extruder gear eating into filament</p>
+                </div>
+            </div>
+
+            <h3>The Cold Pull Method</h3>
+
+            <div class="steps-list">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Heat to Print Temp</h4>
+                        <p>Heat nozzle to your normal printing temperature.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Push Filament Through</h4>
+                        <p>Manually push filament through to get flow started.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Cool to 90°C (PLA) or 160°C (PETG)</h4>
+                        <p>Let nozzle cool with filament still in it.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Pull Firmly</h4>
+                        <p>Yank the filament out. The tip should have debris stuck to it!</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h4>Repeat if Needed</h4>
+                        <p>Do 2-3 cold pulls until filament tip comes out clean.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <strong>When to Replace the Nozzle:</strong> Nozzles wear out over time, especially when printing abrasive filaments (glow-in-dark, carbon fiber). If cold pulls don't help, swap in a new nozzle. They're cheap!
+            </div>
+        </section>
+
+        <!-- Problem 6: Quality Issues -->
+        <section class="lesson" id="quality">
+            <h2>Problem: Poor Surface Quality</h2>
+
+            <h3>Blobs and Zits</h3>
+            <p>Small bumps on the surface, especially at layer start points.</p>
+
+            <div class="steps-list">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Enable "Coasting"</h4>
+                        <p>Stops extrusion slightly before the end of each line to reduce pressure.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Adjust Retraction</h4>
+                        <p>Too little = blobs. Too much = gaps. Find the sweet spot.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Lower Temperature</h4>
+                        <p>Hotter plastic oozes more. Try reducing by 5°C.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Hide the Seam</h4>
+                        <p>Set "Z seam alignment" to "Sharpest corner" to hide layer starts.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Rough Overhangs</h3>
+            <p>Droopy or rough surfaces on angled parts.</p>
+
+            <div class="tip-box">
+                <strong>Overhang Solutions:</strong>
+                <ul>
+                    <li>Add supports for angles over 45°</li>
+                    <li>Lower temperature for better bridging</li>
+                    <li>Increase cooling fan to 100%</li>
+                    <li>Slow down print speed for overhangs</li>
+                    <li>Reorient model to reduce overhangs</li>
+                </ul>
+            </div>
+
+            <h3>Elephant's Foot</h3>
+            <p>First layer is wider than the rest, creating a "foot" at the bottom.</p>
+
+            <div class="comparison-box">
+                <div class="comparison-item bad">
+                    <h4>Cause</h4>
+                    <p>Nozzle too close, bed too hot, or too much first layer squish</p>
+                </div>
+                <div class="comparison-item good">
+                    <h4>Fix</h4>
+                    <p>Raise Z-offset slightly, lower bed temp 5°C, or use "elephant foot compensation" in slicer</p>
+                </div>
+                <div class="comparison-item good">
+                    <h4>Post-Fix</h4>
+                    <p>Sand the bottom edge with 220 grit sandpaper</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- This Week's Build -->
+        <section class="lesson weekly-build" id="weekly-build">
+            <h2>This Week's Build: Benchy Troubleshooting</h2>
+
+            <div class="build-overview">
+                <p>The 3DBenchy is the ultimate troubleshooting print! It's designed to test every aspect of your printer. Print one and use this guide to diagnose any issues.</p>
+
+                <div class="build-stats">
+                    <div class="stat">
+                        <span class="stat-value">~1hr</span>
+                        <span class="stat-label">Print Time</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">15g</span>
+                        <span class="stat-label">Filament</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">Diagnostic</span>
+                        <span class="stat-label">Purpose</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="download-options">
+                <a href="https://www.3dbenchy.com/" class="btn btn-secondary" target="_blank" rel="noopener">Download 3DBenchy</a>
+            </div>
+
+            <h3>Benchy Diagnosis Guide</h3>
+
+            <div class="diagram">
+                <div class="diagram-title">What Each Part of Benchy Tests</div>
+                <pre class="ascii-diagram">
+              Chimney ──────────────▶ Small detail & stringing
+                    ╱╲
+                   ╱  ╲
+    Roof ─────────╱────╲──────────▶ Overhangs (45°)
+                 │      │
+    Windows ─────│  []  │─────────▶ Bridging
+                 │      │
+    Hull ────────│      │─────────▶ Curved surfaces & layers
+                 │      │
+    Text ────────│BENCHY│─────────▶ Fine detail
+                 └──────┘
+    Bottom ────────────────────────▶ First layer & adhesion
+                </pre>
+            </div>
+
+            <div class="tip-box">
+                <strong>Benchy Checklist:</strong>
+                <ul>
+                    <li>Hull should be 60mm long (test dimensional accuracy)</li>
+                    <li>No stringing from chimney to cabin</li>
+                    <li>Porthole (circle) should be round, not oval</li>
+                    <li>Text on back should be readable</li>
+                    <li>No warping on bottom</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Share Section -->
+        <section class="lesson" id="share">
+            <h2>Share Your Troubleshooting Success</h2>
+
+            <p>Fixed a problem? Help others learn from your experience!</p>
+
+            <div class="share-steps">
+                <div class="share-step">
+                    <span class="share-icon">📸</span>
+                    <h4>1. Before & After</h4>
+                    <p>Show the problem and the fixed result</p>
+                </div>
+                <div class="share-step">
+                    <span class="share-icon">🔧</span>
+                    <h4>2. What Fixed It</h4>
+                    <p>Document the settings you changed</p>
+                </div>
+                <div class="share-step">
+                    <span class="share-icon">🔀</span>
+                    <h4>3. Fork & Add</h4>
+                    <p>Add to community-prints/troubleshooting/</p>
+                </div>
+                <div class="share-step">
+                    <span class="share-icon">🎓</span>
+                    <h4>4. Teach Others</h4>
+                    <p>Your experience helps the community!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements -->
+        <section class="achievements">
+            <h3>Achievements Unlocked</h3>
+            <div class="achievement-badges">
+                <div class="badge">
+                    <span class="badge-icon">🔧</span>
+                    <span class="badge-text">Problem Solver</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">🚢</span>
+                    <span class="badge-text">Benchy Captain</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">🎯</span>
+                    <span class="badge-text">Dialed In</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Module Complete -->
+        <section class="module-complete">
+            <h2>Troubleshooting Pro!</h2>
+            <p>You now know how to diagnose and fix the most common 3D printing problems.</p>
+
+            <div class="next-steps">
+                <h3>Remember</h3>
+                <ul>
+                    <li>Most problems have simple solutions</li>
+                    <li>Change ONE setting at a time</li>
+                    <li>Keep notes on what works</li>
+                    <li>The Benchy is your diagnostic friend</li>
+                </ul>
+            </div>
+
+            <div class="module-nav">
+                <a href="workflow.html" class="btn btn-secondary">← Previous: Workflow</a>
+                <a href="advanced.html" class="btn btn-primary">Next: Level Up →</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Tutor Button -->
+    <button id="tutor-fab" class="tutor-fab" aria-label="Open LayerBEE tutor">
+        <span class="fab-icon">🐝</span>
+        <span class="fab-text">Ask LayerBEE</span>
+    </button>
+
+    <footer class="site-footer">
+        <p>Built for young makers with the <strong>Producer Mindset</strong></p>
+        <p class="footer-note">100% free. No data leaves your browser. - LayerBEE</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D Printing Basics | LayerBEE</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐝</text></svg>">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../mascot/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../mascot/favicon-16.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -18,7 +20,7 @@
     <header class="site-header">
         <div class="header-content">
             <a href="../index.html" class="logo">
-                <span class="logo-icon">🐝</span>
+                <img src="../mascot/layerbee-circle-logo.png" alt="" class="logo-img" aria-hidden="true">
                 <span class="logo-text">LayerBEE</span>
             </a>
             <nav aria-label="Main navigation">
@@ -329,17 +331,123 @@
             </div>
         </section>
 
+        <!-- This Week's Build -->
+        <section class="lesson weekly-build" id="weekly-build">
+            <h2>🛠️ This Week's Build: Calibration Cube</h2>
+
+            <div class="build-overview">
+                <div class="build-info">
+                    <p>Every module includes a <strong>hands-on build project</strong>. This week, you'll print a calibration cube - the first print every maker should do!</p>
+
+                    <div class="build-stats">
+                        <div class="stat">
+                            <span class="stat-value">~20 min</span>
+                            <span class="stat-label">Print Time</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">~2g</span>
+                            <span class="stat-label">Filament</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">Easy</span>
+                            <span class="stat-label">Difficulty</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>What You'll Learn</h3>
+            <ul>
+                <li>✅ How to load a file onto your printer</li>
+                <li>✅ Watching the first layer for good adhesion</li>
+                <li>✅ Measuring your print to check accuracy</li>
+                <li>✅ Understanding what a successful print looks like</li>
+            </ul>
+
+            <h3>Get the File</h3>
+            <div class="download-options">
+                <a href="https://www.thingiverse.com/thing:1278865" target="_blank" rel="noopener" class="btn btn-secondary">
+                    📥 Download from Thingiverse
+                </a>
+                <a href="https://github.com/w4ester/three-d-printing-shop-LayerBEE/tree/main/prints/week-01-calibration-cube" target="_blank" rel="noopener" class="btn btn-primary">
+                    🐙 Get from GitHub (with settings)
+                </a>
+            </div>
+
+            <div class="tip-box">
+                <strong>🐝 LayerBEE's Tip:</strong> A calibration cube should measure exactly 20mm on each side. If yours is off, you may need to calibrate your printer's steps!
+            </div>
+
+            <button class="ask-tutor-btn" data-question="How do I slice and print a calibration cube? Walk me through step by step.">
+                🐝 Help me print this!
+            </button>
+        </section>
+
+        <!-- Share Your Build -->
+        <section class="lesson share-build" id="share">
+            <h2>📤 Share Your Build</h2>
+
+            <p>Part of being a maker is <strong>sharing what you learn</strong>! Here's how:</p>
+
+            <div class="share-steps">
+                <div class="share-step">
+                    <span class="share-icon">📸</span>
+                    <h4>1. Take a Photo</h4>
+                    <p>Show off your calibration cube! Good lighting helps.</p>
+                </div>
+                <div class="share-step">
+                    <span class="share-icon">📏</span>
+                    <h4>2. Measure It</h4>
+                    <p>Use calipers or a ruler. How close to 20mm is each side?</p>
+                </div>
+                <div class="share-step">
+                    <span class="share-icon">📝</span>
+                    <h4>3. Document Settings</h4>
+                    <p>What slicer? What temperatures? This helps others!</p>
+                </div>
+                <div class="share-step">
+                    <span class="share-icon">🐙</span>
+                    <h4>4. Share on GitHub</h4>
+                    <p>Fork our repo and add your print to the community gallery!</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong>💡 Why Share?</strong> When you document and share your work:
+                <ul>
+                    <li>You help other kids learn from your experience</li>
+                    <li>You build a portfolio of your maker projects</li>
+                    <li>You practice skills used by professional engineers</li>
+                    <li>You might even sell your designs later!</li>
+                </ul>
+            </div>
+        </section>
+
         <!-- Module Complete -->
         <section class="module-complete" id="complete">
             <h2>🎉 Module Complete!</h2>
             <p>Awesome job! You now understand the basics of 3D printing.</p>
 
+            <div class="achievements">
+                <h3>🏆 Achievements Unlocked</h3>
+                <div class="achievement-badges">
+                    <div class="badge">
+                        <span class="badge-icon">📚</span>
+                        <span class="badge-text">Basics Scholar</span>
+                    </div>
+                    <div class="badge">
+                        <span class="badge-icon">🎯</span>
+                        <span class="badge-text">First Print</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="next-steps">
                 <h3>What's Next?</h3>
                 <ul>
-                    <li>Try printing a simple test cube on your printer</li>
-                    <li>Experiment with different colors of PLA</li>
-                    <li>Move on to Module 2: The Print Workflow</li>
+                    <li>✅ Print your calibration cube</li>
+                    <li>📸 Share it on GitHub</li>
+                    <li>➡️ Move on to Module 2: The Print Workflow</li>
                 </ul>
             </div>
 

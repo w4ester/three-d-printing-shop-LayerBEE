@@ -421,6 +421,134 @@
     margin-top: var(--space-xl);
 }
 
+/* Weekly Build Section */
+.weekly-build {
+    background: linear-gradient(135deg, var(--color-bg-alt) 0%, rgba(251, 191, 36, 0.05) 100%);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    border: 2px dashed var(--color-primary);
+}
+
+.build-overview {
+    margin-bottom: var(--space-lg);
+}
+
+.build-stats {
+    display: flex;
+    gap: var(--space-lg);
+    margin-top: var(--space-md);
+}
+
+.build-stats .stat {
+    text-align: center;
+}
+
+.build-stats .stat-value {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.build-stats .stat-label {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+}
+
+.download-options {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    margin: var(--space-lg) 0;
+}
+
+/* Share Your Build Section */
+.share-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-md);
+    margin: var(--space-lg) 0;
+}
+
+.share-step {
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    text-align: center;
+}
+
+.share-icon {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: var(--space-sm);
+}
+
+.share-step h4 {
+    font-size: 0.9rem;
+    margin-bottom: var(--space-xs);
+}
+
+.share-step p {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+/* Achievements */
+.achievements {
+    margin: var(--space-xl) 0;
+}
+
+.achievement-badges {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+.badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-md);
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-md);
+    min-width: 100px;
+}
+
+[data-theme="dark"] .badge {
+    background: linear-gradient(135deg, #451a03 0%, #78350f 100%);
+}
+
+.badge-icon {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-xs);
+}
+
+.badge-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+}
+
+[data-theme="dark"] .badge-text {
+    color: var(--color-primary);
+}
+
+/* Info box list styling */
+.info-box ul {
+    margin: var(--space-sm) 0 0 0;
+    padding-left: var(--space-lg);
+}
+
+.info-box li {
+    margin-bottom: var(--space-xs);
+    font-size: 0.9rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .filament-row {

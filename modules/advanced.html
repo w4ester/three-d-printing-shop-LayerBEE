@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced 3D printing techniques - multi-color, speed tuning, and post-processing with LayerBEE">
+    <title>Module 4: Level Up - LayerBEE</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../mascot/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../mascot/favicon-16.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/module.css">
+    <link rel="stylesheet" href="../css/tutor.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../mascot/layerbee-circle-logo.png" alt="" class="logo-img" aria-hidden="true">
+                <span class="logo-text">LayerBEE</span>
+            </a>
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#modules" class="nav-link">Learn</a></li>
+                    <li><a href="troubleshoot.html" class="nav-link">Fix Problems</a></li>
+                    <li><a href="business.html" class="nav-link">Start Selling</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon-light">☀️</span>
+                    <span class="theme-icon-dark">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="module-content">
+        <section class="module-header-section">
+            <a href="../index.html#modules" class="back-link">← Back to Modules</a>
+            <span class="module-badge">Module 04</span>
+            <h1>Level Up Your Printing</h1>
+            <p class="module-description">
+                Take your prints to the next level with multi-color, speed tuning, and pro finishing techniques!
+            </p>
+        </section>
+
+        <!-- Lesson 1: Multi-Color Printing -->
+        <section class="lesson" id="lesson-1">
+            <h2>Lesson 1: Multi-Color Printing</h2>
+
+            <p>Add colors to your prints! There are several ways to do this, from simple to advanced.</p>
+
+            <h3>Method 1: Filament Swap (No Special Hardware)</h3>
+
+            <div class="diagram">
+                <div class="diagram-title">Manual Color Change</div>
+                <pre class="ascii-diagram">
+    Layer 1-10: ██████████  Color A (Black)
+    Layer 11:   ── PAUSE ── Swap filament!
+    Layer 12-20: ░░░░░░░░░░  Color B (White)
+
+    Perfect for: Signs, nameplates, simple 2-color designs
+                </pre>
+            </div>
+
+            <div class="steps-list">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Find the Layer</h4>
+                        <p>In your slicer, use the layer preview to find where you want to change colors.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Add a Pause</h4>
+                        <p>In Cura: Extensions → Post Processing → Add "Pause at Height". In PrusaSlicer: Right-click the layer slider → "Add color change".</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Swap and Purge</h4>
+                        <p>When print pauses, swap filament and extrude until new color comes through cleanly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Method 2: Multi-Material Systems</h3>
+
+            <div class="filament-table">
+                <div class="filament-row header">
+                    <span>System</span>
+                    <span>Colors</span>
+                    <span>Cost</span>
+                    <span>Difficulty</span>
+                </div>
+                <div class="filament-row pla">
+                    <span>Bambu AMS</span>
+                    <span>4-16</span>
+                    <span>$$$</span>
+                    <span>Easy</span>
+                </div>
+                <div class="filament-row petg">
+                    <span>Prusa MMU3</span>
+                    <span>5</span>
+                    <span>$$</span>
+                    <span>Medium</span>
+                </div>
+                <div class="filament-row tpu">
+                    <span>ERCF/Tradrack</span>
+                    <span>6-9</span>
+                    <span>$-$$</span>
+                    <span>Hard (DIY)</span>
+                </div>
+                <div class="filament-row abs">
+                    <span>Palette 3</span>
+                    <span>4</span>
+                    <span>$$$</span>
+                    <span>Medium</span>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>Start Simple:</strong> Try manual filament swaps before investing in multi-material hardware. It's free and teaches you how color changes work!
+            </div>
+
+            <h3>Method 3: Paint It!</h3>
+
+            <p>Sometimes the easiest multi-color method is post-print painting. Print in one color, paint the details.</p>
+
+            <div class="info-box">
+                <strong>Best Paints for 3D Prints:</strong>
+                <ul>
+                    <li><strong>Acrylic paints</strong> - Cheap, easy to use, water cleanup</li>
+                    <li><strong>Spray paint + primer</strong> - Great for base coats</li>
+                    <li><strong>Alcohol markers</strong> - Good for small details</li>
+                    <li><strong>Washes</strong> - Thin paint that settles in crevices for weathering effects</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Lesson 2: Speed Tuning -->
+        <section class="lesson" id="lesson-2">
+            <h2>Lesson 2: Speed Tuning</h2>
+
+            <p>Want faster prints without sacrificing quality? Let's tune your printer!</p>
+
+            <h3>Understanding Speed Settings</h3>
+
+            <div class="diagram">
+                <div class="diagram-title">Speed Types in Your Slicer</div>
+                <pre class="ascii-diagram">
+    ┌─────────────────────────────────────────────────────────┐
+    │ Print Speed: Overall speed for printing moves           │
+    │    └── Infill: Can be faster (hidden inside)           │
+    │    └── Walls: Should be slower (visible)               │
+    │    └── Top/Bottom: Medium speed                        │
+    │                                                         │
+    │ Travel Speed: Moving without extruding (can be fast!)  │
+    │                                                         │
+    │ First Layer: ALWAYS slow (25-50% of normal)            │
+    └─────────────────────────────────────────────────────────┘
+                </pre>
+            </div>
+
+            <h3>Safe Speed Increases</h3>
+
+            <div class="steps-list">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Infill Speed: Go Fast!</h4>
+                        <p>Infill is hidden inside. Crank it up to 80-150mm/s. Nobody will see it!</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Travel Speed: Maximum</h4>
+                        <p>Travel moves don't extrude, so go as fast as your printer allows (150-300mm/s).</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Inner Walls: Moderate</h4>
+                        <p>Inner walls are covered by outer walls. 60-80mm/s is usually fine.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Outer Walls: Keep Slower</h4>
+                        <p>These are what you see. Keep at 40-60mm/s for best quality.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <strong>Speed Limits:</strong> Your printer has physical limits. Going too fast causes:
+                <ul>
+                    <li>Layer shifts (motors skip steps)</li>
+                    <li>Ringing/ghosting (vibration artifacts)</li>
+                    <li>Under-extrusion (can't melt plastic fast enough)</li>
+                </ul>
+            </div>
+
+            <h3>Input Shaper (Klipper Users)</h3>
+
+            <p>If your printer runs Klipper firmware, Input Shaper can reduce ringing and allow much higher speeds!</p>
+
+            <div class="tip-box">
+                <strong>Klipper Speed Benefits:</strong>
+                <ul>
+                    <li>Run accelerometer calibration to measure resonance</li>
+                    <li>Klipper compensates for vibrations automatically</li>
+                    <li>Print 2-3x faster with same quality!</li>
+                    <li>Works on many printers with firmware upgrade</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Lesson 3: Post-Processing -->
+        <section class="lesson" id="lesson-3">
+            <h2>Lesson 3: Post-Processing</h2>
+
+            <p>Turn good prints into great ones with finishing techniques!</p>
+
+            <h3>Sanding</h3>
+
+            <div class="comparison-box">
+                <div class="comparison-item good">
+                    <h4>Wet Sanding</h4>
+                    <p>Use water to reduce dust. Start 220 grit → 400 → 800 → 1000+</p>
+                </div>
+                <div class="comparison-item good">
+                    <h4>Dry Sanding</h4>
+                    <p>Faster but dusty. Wear a mask! Good for rough shaping.</p>
+                </div>
+                <div class="comparison-item bad">
+                    <h4>Skip Grits</h4>
+                    <p>Don't jump from 220 to 1000. You'll see scratches!</p>
+                </div>
+            </div>
+
+            <h3>Filling & Priming</h3>
+
+            <div class="steps-list">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Fill Layer Lines</h4>
+                        <p>Use filler primer spray or wood filler to fill gaps. Sand smooth when dry.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Spot Putty</h4>
+                        <p>For bigger gaps, use automotive spot putty. Apply thin, sand when cured.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Primer Coat</h4>
+                        <p>Gray primer reveals imperfections. Fix them, then final prime.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Vapor Smoothing (ABS/ASA Only)</h3>
+
+            <div class="warning-box">
+                <strong>Safety First:</strong> Acetone vapor smoothing uses dangerous fumes!
+                <ul>
+                    <li>Only for ABS or ASA plastic (not PLA!)</li>
+                    <li>Do outdoors or with very good ventilation</li>
+                    <li>Keep away from flames - acetone is flammable</li>
+                    <li>Have an adult supervise</li>
+                </ul>
+            </div>
+
+            <h3>Clear Coating</h3>
+
+            <p>Protect your finished piece and add shine!</p>
+
+            <div class="filament-table">
+                <div class="filament-row header">
+                    <span>Finish</span>
+                    <span>Look</span>
+                    <span>Best For</span>
+                    <span>Notes</span>
+                </div>
+                <div class="filament-row pla">
+                    <span>Matte</span>
+                    <span>Flat, no shine</span>
+                    <span>Props, terrain</span>
+                    <span>Hides imperfections</span>
+                </div>
+                <div class="filament-row petg">
+                    <span>Satin</span>
+                    <span>Subtle sheen</span>
+                    <span>Most projects</span>
+                    <span>Good all-rounder</span>
+                </div>
+                <div class="filament-row tpu">
+                    <span>Gloss</span>
+                    <span>Shiny!</span>
+                    <span>Figurines, cars</span>
+                    <span>Shows every flaw</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lesson 4: Special Techniques -->
+        <section class="lesson" id="lesson-4">
+            <h2>Lesson 4: Special Techniques</h2>
+
+            <h3>Vase Mode (Spiralize)</h3>
+
+            <p>Print hollow objects with a single continuous spiral - fast and beautiful!</p>
+
+            <div class="diagram">
+                <div class="diagram-title">Vase Mode vs Normal Mode</div>
+                <pre class="ascii-diagram">
+    Normal Layers              Vase Mode (Spiral)
+    ═══════════════           ╱─────────────────
+    ═══════════════          ╱
+    ═══════════════         ╱
+    ═══════════════        ╱    No layer seam!
+    ═══════════════       ╱     Single wall
+    ═══════════════      ╱      Super fast
+
+    Has visible seam      Seamless spiral
+    Multiple walls        One continuous line
+                </pre>
+            </div>
+
+            <div class="tip-box">
+                <strong>Vase Mode Tips:</strong>
+                <ul>
+                    <li>Enable in slicer: "Spiralize Outer Contour" or "Vase Mode"</li>
+                    <li>Use 0.6mm nozzle for stronger walls</li>
+                    <li>Great for vases, lampshades, bowls, pencil cups</li>
+                    <li>Can't have multiple shells or infill</li>
+                </ul>
+            </div>
+
+            <h3>Ironing</h3>
+
+            <p>Get perfectly smooth top surfaces by "ironing" them with the hot nozzle.</p>
+
+            <div class="info-box">
+                <strong>How to Enable:</strong>
+                <ul>
+                    <li>In Cura: Search "ironing" and enable</li>
+                    <li>In PrusaSlicer: Print Settings → Infill → Enable ironing</li>
+                    <li>Adds print time but gives glass-smooth tops</li>
+                    <li>Best for flat-topped objects like boxes or signs</li>
+                </ul>
+            </div>
+
+            <h3>Print-in-Place</h3>
+
+            <p>Print moving parts that work right off the bed - no assembly needed!</p>
+
+            <div class="parts-grid">
+                <div class="part-card">
+                    <div class="part-icon">🔗</div>
+                    <h4>Chain Links</h4>
+                    <p>Interlocked chains that flex</p>
+                </div>
+                <div class="part-card">
+                    <div class="part-icon">🎯</div>
+                    <h4>Hinges</h4>
+                    <p>Boxes with working lids</p>
+                </div>
+                <div class="part-card">
+                    <div class="part-icon">⚙️</div>
+                    <h4>Gears</h4>
+                    <p>Planetary gear sets</p>
+                </div>
+                <div class="part-card">
+                    <div class="part-icon">🔧</div>
+                    <h4>Wrenches</h4>
+                    <p>Adjustable print-in-place tools</p>
+                </div>
+            </div>
+
+            <h3>Fuzzy Skin</h3>
+
+            <p>Add a textured, rough surface for grip or organic looks!</p>
+
+            <div class="tip-box">
+                <strong>Fuzzy Skin Settings:</strong>
+                <ul>
+                    <li>Enable in slicer under "Experimental" or "Surface" settings</li>
+                    <li>Adjust "Fuzzy Skin Thickness" (0.1-0.5mm)</li>
+                    <li>Great for grips, organic models, hiding layer lines</li>
+                    <li>Can't be sanded smooth - choose wisely!</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- This Week's Build -->
+        <section class="lesson weekly-build" id="weekly-build">
+            <h2>This Week's Build: Spiral Vase</h2>
+
+            <div class="build-overview">
+                <p>Put your new skills to work! Print a beautiful spiral vase using Vase Mode - it's faster than you'd think and looks amazing.</p>
+
+                <div class="build-stats">
+                    <div class="stat">
+                        <span class="stat-value">~30min</span>
+                        <span class="stat-label">Print Time</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">20g</span>
+                        <span class="stat-label">Filament</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">Intermediate</span>
+                        <span class="stat-label">Difficulty</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="download-options">
+                <a href="https://www.printables.com/model/37038" class="btn btn-secondary" target="_blank" rel="noopener">Low Poly Vase</a>
+                <a href="https://www.thingiverse.com/thing:570288" class="btn btn-secondary" target="_blank" rel="noopener">Twisted Vase</a>
+            </div>
+
+            <h3>Recommended Settings</h3>
+            <div class="filament-table">
+                <div class="filament-row header">
+                    <span>Setting</span>
+                    <span>Value</span>
+                    <span>Why</span>
+                    <span></span>
+                </div>
+                <div class="filament-row pla">
+                    <span>Vase Mode</span>
+                    <span>ON</span>
+                    <span>Single-wall spiral</span>
+                    <span></span>
+                </div>
+                <div class="filament-row petg">
+                    <span>Layer Height</span>
+                    <span>0.2-0.3mm</span>
+                    <span>Speed over detail</span>
+                    <span></span>
+                </div>
+                <div class="filament-row tpu">
+                    <span>Line Width</span>
+                    <span>0.5-0.6mm</span>
+                    <span>Stronger walls</span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>Color Tip:</strong> Silk or gradient filaments look stunning in vase mode! The single-wall lets light through beautifully.
+            </div>
+        </section>
+
+        <!-- Share Section -->
+        <section class="lesson" id="share">
+            <h2>Share Your Advanced Print</h2>
+
+            <p>Show off your leveled-up skills!</p>
+
+            <div class="share-steps">
+                <div class="share-step">
+                    <span class="share-icon">📸</span>
+                    <h4>1. Beauty Shot</h4>
+                    <p>Good lighting shows off your finish</p>
+                </div>
+                <div class="share-step">
+                    <span class="share-icon">⚡</span>
+                    <h4>2. Speed Stats</h4>
+                    <p>Share your print time and settings</p>
+                </div>
+                <div class="share-step">
+                    <span class="share-icon">🔀</span>
+                    <h4>3. Fork & Add</h4>
+                    <p>Add to community-prints/advanced/</p>
+                </div>
+                <div class="share-step">
+                    <span class="share-icon">✨</span>
+                    <h4>4. Inspire Others</h4>
+                    <p>Show what's possible!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements -->
+        <section class="achievements">
+            <h3>Achievements Unlocked</h3>
+            <div class="achievement-badges">
+                <div class="badge">
+                    <span class="badge-icon">🎨</span>
+                    <span class="badge-text">Color Master</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">⚡</span>
+                    <span class="badge-text">Speed Demon</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">✨</span>
+                    <span class="badge-text">Finish Pro</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Module Complete -->
+        <section class="module-complete">
+            <h2>You've Leveled Up!</h2>
+            <p>You now have advanced techniques to take your prints from good to amazing.</p>
+
+            <div class="next-steps">
+                <h3>Keep Experimenting</h3>
+                <ul>
+                    <li>Try vase mode with different shapes</li>
+                    <li>Practice post-processing on failed prints</li>
+                    <li>Tune your printer for speed</li>
+                    <li>Ready to sell? Check out the Business module!</li>
+                </ul>
+            </div>
+
+            <div class="module-nav">
+                <a href="troubleshoot.html" class="btn btn-secondary">← Previous: Troubleshooting</a>
+                <a href="business.html" class="btn btn-primary">Next: Start Your Print Shop →</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Tutor Button -->
+    <button id="tutor-fab" class="tutor-fab" aria-label="Open LayerBEE tutor">
+        <span class="fab-icon">🐝</span>
+        <span class="fab-text">Ask LayerBEE</span>
+    </button>
+
+    <footer class="site-footer">
+        <p>Built for young makers with the <strong>Producer Mindset</strong></p>
+        <p class="footer-note">100% free. No data leaves your browser. - LayerBEE</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

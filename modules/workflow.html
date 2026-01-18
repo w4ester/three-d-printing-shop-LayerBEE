@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn the complete 3D printing workflow - from design to finished print with LayerBEE">
+    <title>Module 2: The Print Workflow - LayerBEE</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../mascot/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../mascot/favicon-16.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/module.css">
+    <link rel="stylesheet" href="../css/tutor.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../mascot/layerbee-circle-logo.png" alt="" class="logo-img" aria-hidden="true">
+                <span class="logo-text">LayerBEE</span>
+            </a>
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#modules" class="nav-link">Learn</a></li>
+                    <li><a href="troubleshoot.html" class="nav-link">Fix Problems</a></li>
+                    <li><a href="business.html" class="nav-link">Start Selling</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon-light">☀️</span>
+                    <span class="theme-icon-dark">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="module-content">
+        <section class="module-header-section">
+            <a href="../index.html#modules" class="back-link">← Back to Modules</a>
+            <span class="module-badge">Module 02</span>
+            <h1>The Print Workflow</h1>
+            <p class="module-description">
+                Master the complete journey from idea to finished print: Design → Slice → Print!
+            </p>
+        </section>
+
+        <!-- Lesson 1: The Big Picture -->
+        <section class="lesson" id="lesson-1">
+            <h2>Lesson 1: Understanding the Workflow</h2>
+
+            <p>Every 3D print follows the same journey. Understanding this workflow helps you troubleshoot problems and create better prints!</p>
+
+            <div class="diagram">
+                <div class="diagram-title">The 3D Printing Pipeline</div>
+                <pre class="ascii-diagram">
+    ┌─────────────┐     ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
+    │   DESIGN    │────▶│    SLICE    │────▶│  TRANSFER   │────▶│    PRINT    │
+    │   (.STL)    │     │  (.GCODE)   │     │  (SD/USB)   │     │  (Object!)  │
+    └─────────────┘     └─────────────┘     └─────────────┘     └─────────────┘
+         │                   │                    │                    │
+    Tinkercad          Cura/Slicer           SD Card or          Your printer
+    Thingiverse        PrusaSlicer          USB drive            does the work!
+    Custom CAD         OrcaSlicer           WiFi/Network
+                </pre>
+            </div>
+
+            <h3>What Happens at Each Step?</h3>
+
+            <div class="steps-list">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Design (STL File)</h4>
+                        <p>Create or download a 3D model. STL files describe the shape but don't tell the printer HOW to make it.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Slice (G-code File)</h4>
+                        <p>The slicer "cuts" your model into thin layers and creates instructions (G-code) telling the printer exactly where to move and how much filament to push out.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Transfer</h4>
+                        <p>Get the G-code file to your printer via SD card, USB drive, or network connection.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Print!</h4>
+                        <p>Your printer reads the G-code and builds your object layer by layer.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>Pro Tip:</strong> Most print problems come from Step 2 (slicing). Getting your slicer settings right is the key to great prints!
+            </div>
+        </section>
+
+        <!-- Lesson 2: Getting Your Model -->
+        <section class="lesson" id="lesson-2">
+            <h2>Lesson 2: Getting Your 3D Model</h2>
+
+            <p>You have two main options: download a model someone else made, or create your own!</p>
+
+            <h3>Option A: Download Ready-Made Models</h3>
+
+            <div class="parts-grid">
+                <div class="part-card">
+                    <div class="part-icon">🌐</div>
+                    <h4>Thingiverse</h4>
+                    <p>Huge library of free models. Great for beginners!</p>
+                </div>
+                <div class="part-card">
+                    <div class="part-icon">🎯</div>
+                    <h4>Printables</h4>
+                    <p>Prusa's site - high quality, well-tested models</p>
+                </div>
+                <div class="part-card">
+                    <div class="part-icon">🎨</div>
+                    <h4>Cults3D</h4>
+                    <p>Mix of free and paid designs</p>
+                </div>
+                <div class="part-card">
+                    <div class="part-icon">🔧</div>
+                    <h4>MyMiniFactory</h4>
+                    <p>Curated models, many for tabletop gaming</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong>What to Look For:</strong>
+                <ul>
+                    <li>Check comments for print settings that worked</li>
+                    <li>Look for "Makes" - photos of successful prints</li>
+                    <li>Download the .STL file (not .STEP or .OBJ for now)</li>
+                    <li>Read the description for special instructions</li>
+                </ul>
+            </div>
+
+            <h3>Option B: Design Your Own in Tinkercad</h3>
+
+            <p>Tinkercad is a free, browser-based CAD tool perfect for beginners. No downloads needed!</p>
+
+            <div class="steps-list">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Create an Account</h4>
+                        <p>Go to <strong>tinkercad.com</strong> and sign up (free). You can use a school account or create one with parent help.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Start a New Design</h4>
+                        <p>Click "Create new design" to open the 3D workspace.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Drag and Drop Shapes</h4>
+                        <p>Use basic shapes (boxes, cylinders, spheres) from the right panel. Combine them to make complex objects!</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Export as STL</h4>
+                        <p>Click "Export" in the top right and choose ".STL" to download your model.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>Design Tips for 3D Printing:</strong>
+                <ul>
+                    <li>Make walls at least 1.2mm thick (3 nozzle widths)</li>
+                    <li>Avoid overhangs greater than 45° without supports</li>
+                    <li>Add a flat bottom for bed adhesion</li>
+                    <li>Think about how the printer will build it layer by layer</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Lesson 3: Slicing Your Model -->
+        <section class="lesson" id="lesson-3">
+            <h2>Lesson 3: Slicing Your Model</h2>
+
+            <p>The slicer is your control center for print quality. Let's learn the essential settings!</p>
+
+            <h3>Popular Slicers</h3>
+
+            <div class="filament-table">
+                <div class="filament-row header">
+                    <span>Slicer</span>
+                    <span>Best For</span>
+                    <span>Difficulty</span>
+                    <span>Cost</span>
+                </div>
+                <div class="filament-row pla">
+                    <span>Cura</span>
+                    <span>Most FDM printers, especially Creality</span>
+                    <span>Easy</span>
+                    <span>Free</span>
+                </div>
+                <div class="filament-row petg">
+                    <span>PrusaSlicer</span>
+                    <span>Prusa printers + great profiles</span>
+                    <span>Medium</span>
+                    <span>Free</span>
+                </div>
+                <div class="filament-row tpu">
+                    <span>OrcaSlicer</span>
+                    <span>Bambu Lab + advanced features</span>
+                    <span>Medium</span>
+                    <span>Free</span>
+                </div>
+                <div class="filament-row abs">
+                    <span>Bambu Studio</span>
+                    <span>Bambu Lab printers only</span>
+                    <span>Easy</span>
+                    <span>Free</span>
+                </div>
+            </div>
+
+            <h3>Key Slicer Settings</h3>
+
+            <div class="diagram">
+                <div class="diagram-title">Layer Height Comparison</div>
+                <pre class="ascii-diagram">
+    0.1mm (Fine)          0.2mm (Standard)       0.3mm (Draft)
+    ═══════════════       ═════════════════       ═══════════════
+    ═══════════════       ═════════════════       ═══════════════
+    ═══════════════       ═════════════════       ═══════════════
+    ═══════════════       ═════════════════
+    ═══════════════
+
+    Smoothest finish      Good balance            Fastest prints
+    Slowest prints        Most common             Visible layers
+    Detailed models       Everyday use            Functional parts
+                </pre>
+            </div>
+
+            <h4>The Big Five Settings</h4>
+
+            <div class="steps-list">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Layer Height</h4>
+                        <p><strong>0.2mm</strong> is the sweet spot. Lower = smoother but slower. Higher = faster but rougher.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Infill Percentage</h4>
+                        <p><strong>15-20%</strong> for most prints. Higher for strong parts, 0% for vases (with vase mode on).</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Print Speed</h4>
+                        <p><strong>50mm/s</strong> for quality, up to 100mm/s for fast prints. New printers like Bambu can go much faster!</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Supports</h4>
+                        <p>Turn ON for overhangs over 45°. Use "tree supports" for easier removal.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h4>Bed Adhesion</h4>
+                        <p><strong>Brim</strong> adds a flat ring around your print for better stick. <strong>Raft</strong> adds layers underneath (slower but very stable).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <strong>Temperature Matters!</strong> Always use the right temperatures for your filament:
+                <ul>
+                    <li>PLA: Nozzle 200-210°C, Bed 50-60°C</li>
+                    <li>PETG: Nozzle 230-250°C, Bed 70-80°C</li>
+                    <li>TPU: Nozzle 220-240°C, Bed 40-60°C</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Lesson 4: Transfer and Print -->
+        <section class="lesson" id="lesson-4">
+            <h2>Lesson 4: Transfer and Print</h2>
+
+            <p>You've sliced your model - now let's get it printing!</p>
+
+            <h3>Getting the File to Your Printer</h3>
+
+            <div class="comparison-box">
+                <div class="comparison-item good">
+                    <h4>SD Card</h4>
+                    <p>Most reliable. Works with all printers. Just copy and eject!</p>
+                </div>
+                <div class="comparison-item good">
+                    <h4>USB Drive</h4>
+                    <p>Same as SD card. Make sure printer has USB port.</p>
+                </div>
+                <div class="comparison-item good">
+                    <h4>WiFi/Network</h4>
+                    <p>Send directly from slicer. Convenient but needs setup.</p>
+                </div>
+            </div>
+
+            <h3>Pre-Print Checklist</h3>
+
+            <div class="info-box">
+                <strong>Before You Hit Print:</strong>
+                <ul>
+                    <li>✓ Bed is clean (wipe with isopropyl alcohol)</li>
+                    <li>✓ Bed is level (or auto-leveled)</li>
+                    <li>✓ Right filament loaded and correct color</li>
+                    <li>✓ Nozzle is clean (no blobs hanging off)</li>
+                    <li>✓ Print fits on the build plate in your slicer preview</li>
+                    <li>✓ Estimated time is reasonable for your schedule</li>
+                </ul>
+            </div>
+
+            <h3>Watching the First Layer</h3>
+
+            <p>The first layer is the most critical. Stay and watch it!</p>
+
+            <div class="comparison-box">
+                <div class="comparison-item good">
+                    <h4>Good First Layer</h4>
+                    <p>Smooth, slightly squished lines. No gaps. Sticks firmly.</p>
+                </div>
+                <div class="comparison-item bad">
+                    <h4>Too High</h4>
+                    <p>Round spaghetti lines. Not sticking. Gaps between lines.</p>
+                </div>
+                <div class="comparison-item bad">
+                    <h4>Too Low</h4>
+                    <p>Thin, transparent. Scraping sounds. Hard to remove.</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>First Layer Fix:</strong> Most slicers have a "Z offset" or "baby stepping" option. If your first layer looks wrong, adjust it during the print! Lower the nozzle if too high, raise if too low.
+            </div>
+        </section>
+
+        <!-- This Week's Build -->
+        <section class="lesson weekly-build" id="weekly-build">
+            <h2>This Week's Build: Phone Stand</h2>
+
+            <div class="build-overview">
+                <p>Now that you understand the workflow, let's put it into practice! This week you'll design or download a phone stand - a useful item you can actually use every day.</p>
+
+                <div class="build-stats">
+                    <div class="stat">
+                        <span class="stat-value">~1hr</span>
+                        <span class="stat-label">Print Time</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">10g</span>
+                        <span class="stat-label">Filament</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">Easy</span>
+                        <span class="stat-label">Difficulty</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Option 1: Download and Print</h3>
+            <div class="download-options">
+                <a href="https://www.thingiverse.com/thing:2194132" class="btn btn-secondary" target="_blank" rel="noopener">Simple Phone Stand</a>
+                <a href="https://www.printables.com/model/269936" class="btn btn-secondary" target="_blank" rel="noopener">Adjustable Stand</a>
+            </div>
+
+            <h3>Option 2: Design Your Own in Tinkercad</h3>
+            <p>Challenge yourself! Create a phone stand that:</p>
+            <ul>
+                <li>Holds your phone at a comfortable viewing angle (45-60°)</li>
+                <li>Has a slot or lip to keep the phone from sliding</li>
+                <li>Is stable and won't tip over</li>
+                <li>Allows charging cable access (optional challenge!)</li>
+            </ul>
+
+            <h3>Recommended Print Settings</h3>
+            <div class="filament-table">
+                <div class="filament-row header">
+                    <span>Setting</span>
+                    <span>Value</span>
+                    <span>Why</span>
+                    <span></span>
+                </div>
+                <div class="filament-row pla">
+                    <span>Layer Height</span>
+                    <span>0.2mm</span>
+                    <span>Good balance of speed and quality</span>
+                    <span></span>
+                </div>
+                <div class="filament-row petg">
+                    <span>Infill</span>
+                    <span>20%</span>
+                    <span>Strong enough for daily use</span>
+                    <span></span>
+                </div>
+                <div class="filament-row tpu">
+                    <span>Supports</span>
+                    <span>Maybe</span>
+                    <span>Depends on design angle</span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>Workflow Practice:</strong> As you print, notice each step of the workflow in action. Can you identify what G-code commands are doing as your printer moves?
+            </div>
+        </section>
+
+        <!-- Share Your Build -->
+        <section class="lesson" id="share">
+            <h2>Share Your Build</h2>
+
+            <p>Made something awesome? Share it with the LayerBEE community!</p>
+
+            <div class="share-steps">
+                <div class="share-step">
+                    <span class="share-icon">📸</span>
+                    <h4>1. Photo Time</h4>
+                    <p>Take a photo of your phone stand in action</p>
+                </div>
+                <div class="share-step">
+                    <span class="share-icon">📝</span>
+                    <h4>2. Document</h4>
+                    <p>Note your slicer settings and any challenges</p>
+                </div>
+                <div class="share-step">
+                    <span class="share-icon">🔀</span>
+                    <h4>3. Fork & Add</h4>
+                    <p>Fork this repo and add to community-prints/</p>
+                </div>
+                <div class="share-step">
+                    <span class="share-icon">🎉</span>
+                    <h4>4. Celebrate</h4>
+                    <p>You've mastered the complete workflow!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements -->
+        <section class="achievements">
+            <h3>Achievements Unlocked</h3>
+            <div class="achievement-badges">
+                <div class="badge">
+                    <span class="badge-icon">🎯</span>
+                    <span class="badge-text">Workflow Master</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">✂️</span>
+                    <span class="badge-text">Slicer Savvy</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">📱</span>
+                    <span class="badge-text">Functional Print</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section class="lesson quiz-section" id="quiz">
+            <h2>Check Your Knowledge</h2>
+
+            <div class="quiz-question" data-question="1">
+                <p><strong>Q1:</strong> What does the slicer software create?</p>
+                <div class="quiz-options">
+                    <button class="quiz-option" data-answer="a">An STL file</button>
+                    <button class="quiz-option" data-answer="b" data-correct="true">A G-code file</button>
+                    <button class="quiz-option" data-answer="c">A CAD file</button>
+                    <button class="quiz-option" data-answer="d">A print file</button>
+                </div>
+            </div>
+
+            <div class="quiz-question" data-question="2">
+                <p><strong>Q2:</strong> What layer height gives the smoothest surface finish?</p>
+                <div class="quiz-options">
+                    <button class="quiz-option" data-answer="a" data-correct="true">0.1mm</button>
+                    <button class="quiz-option" data-answer="b">0.2mm</button>
+                    <button class="quiz-option" data-answer="c">0.3mm</button>
+                    <button class="quiz-option" data-answer="d">0.4mm</button>
+                </div>
+            </div>
+
+            <div class="quiz-question" data-question="3">
+                <p><strong>Q3:</strong> When should you use supports?</p>
+                <div class="quiz-options">
+                    <button class="quiz-option" data-answer="a">For every print</button>
+                    <button class="quiz-option" data-answer="b" data-correct="true">When overhangs exceed 45°</button>
+                    <button class="quiz-option" data-answer="c">Only for large prints</button>
+                    <button class="quiz-option" data-answer="d">Never, they waste filament</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Module Complete -->
+        <section class="module-complete">
+            <h2>Module Complete!</h2>
+            <p>You now understand the full 3D printing workflow from start to finish!</p>
+
+            <div class="next-steps">
+                <h3>What's Next?</h3>
+                <ul>
+                    <li>Practice the workflow with different models</li>
+                    <li>Experiment with slicer settings</li>
+                    <li>Try designing something original in Tinkercad</li>
+                    <li>Move on to Module 3: Troubleshooting</li>
+                </ul>
+            </div>
+
+            <div class="module-nav">
+                <a href="basics.html" class="btn btn-secondary">← Previous: Basics</a>
+                <a href="troubleshoot.html" class="btn btn-primary">Next: Troubleshooting →</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Tutor Button -->
+    <button id="tutor-fab" class="tutor-fab" aria-label="Open LayerBEE tutor">
+        <span class="fab-icon">🐝</span>
+        <span class="fab-text">Ask LayerBEE</span>
+    </button>
+
+    <footer class="site-footer">
+        <p>Built for young makers with the <strong>Producer Mindset</strong></p>
+        <p class="footer-note">100% free. No data leaves your browser. - LayerBEE</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

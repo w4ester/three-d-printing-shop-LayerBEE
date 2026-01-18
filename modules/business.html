@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Start your 3D printing business - pricing, photography, and selling safely with LayerBEE">
+    <title>Module 5: Start Your Print Shop - LayerBEE</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../mascot/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../mascot/favicon-16.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/module.css">
+    <link rel="stylesheet" href="../css/tutor.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../mascot/layerbee-circle-logo.png" alt="" class="logo-img" aria-hidden="true">
+                <span class="logo-text">LayerBEE</span>
+            </a>
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#modules" class="nav-link">Learn</a></li>
+                    <li><a href="troubleshoot.html" class="nav-link">Fix Problems</a></li>
+                    <li><a href="business.html" class="nav-link active">Start Selling</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon-light">☀️</span>
+                    <span class="theme-icon-dark">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="module-content">
+        <section class="module-header-section">
+            <a href="../index.html#modules" class="back-link">← Back to Modules</a>
+            <span class="module-badge">Module 05</span>
+            <h1>Start Your Print Shop</h1>
+            <p class="module-description">
+                Turn your 3D printing skills into a real business! Learn pricing, photos, and how to sell safely.
+            </p>
+        </section>
+
+        <!-- Important Notice -->
+        <section class="lesson" id="safety-first">
+            <div class="warning-box">
+                <strong>Work With Your Parents!</strong>
+                <p>Running a business - even a small one - involves money, legal stuff, and talking to strangers online. Always:</p>
+                <ul>
+                    <li>Get parent/guardian approval before selling anything</li>
+                    <li>Never share personal info (address, phone, school)</li>
+                    <li>Have an adult handle payments and shipping</li>
+                    <li>Meet customers in public places with an adult present</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Lesson 1: The Producer Mindset -->
+        <section class="lesson" id="lesson-1">
+            <h2>Lesson 1: The Producer Mindset</h2>
+
+            <p>You're not just a hobbyist anymore - you're a <strong>producer</strong>. You create value for others!</p>
+
+            <div class="diagram">
+                <div class="diagram-title">The Build → Sell → Share → Create Cycle</div>
+                <pre class="ascii-diagram">
+         ┌──────────┐
+         │  BUILD   │  Master your craft
+         └────┬─────┘
+              │
+              ▼
+         ┌──────────┐
+         │   SELL   │  Earn from your skills
+         └────┬─────┘
+              │
+              ▼
+         ┌──────────┐
+         │  SHARE   │  Teach others, build community
+         └────┬─────┘
+              │
+              ▼
+         ┌──────────┐
+         │  CREATE  │  Design original things
+         └────┬─────┘
+              │
+              └──────────▶ Back to BUILD (level up!)
+                </pre>
+            </div>
+
+            <h3>What Can You Sell?</h3>
+
+            <div class="parts-grid">
+                <div class="part-card">
+                    <div class="part-icon">🎁</div>
+                    <h4>Custom Gifts</h4>
+                    <p>Nameplates, keychains, personalized items</p>
+                </div>
+                <div class="part-card">
+                    <div class="part-icon">📱</div>
+                    <h4>Practical Items</h4>
+                    <p>Phone stands, organizers, hooks</p>
+                </div>
+                <div class="part-card">
+                    <div class="part-icon">🎮</div>
+                    <h4>Gaming & Hobby</h4>
+                    <p>Dice towers, miniatures, accessories</p>
+                </div>
+                <div class="part-card">
+                    <div class="part-icon">🌸</div>
+                    <h4>Decor</h4>
+                    <p>Planters, vases, figurines</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>Start Small:</strong> Begin with friends, family, and neighbors. Word of mouth is powerful! As you build confidence and skill, you can expand.
+            </div>
+        </section>
+
+        <!-- Lesson 2: Pricing Your Prints -->
+        <section class="lesson" id="lesson-2">
+            <h2>Lesson 2: Pricing Your Prints</h2>
+
+            <p>The #1 question: "How much should I charge?" Here's a formula that actually works.</p>
+
+            <div class="diagram">
+                <div class="diagram-title">The Pricing Formula</div>
+                <pre class="ascii-diagram">
+    ┌─────────────────────────────────────────────────────────────┐
+    │                                                             │
+    │   PRICE = Materials + Time + Overhead + Profit              │
+    │                                                             │
+    │   Materials: Filament cost for this print                   │
+    │   Time:      Your hourly rate × hours of work               │
+    │   Overhead:  Electricity, wear & tear, failed prints        │
+    │   Profit:    What you want to earn on top                   │
+    │                                                             │
+    └─────────────────────────────────────────────────────────────┘
+                </pre>
+            </div>
+
+            <h3>Step 1: Calculate Material Cost</h3>
+
+            <div class="info-box">
+                <strong>Filament Math:</strong>
+                <ul>
+                    <li>1 kg spool = 1000 grams</li>
+                    <li>$20 spool ÷ 1000g = $0.02 per gram</li>
+                    <li>Your slicer tells you gram weight!</li>
+                    <li>Example: 50g print × $0.02 = <strong>$1.00 in filament</strong></li>
+                </ul>
+            </div>
+
+            <h3>Step 2: Add Your Time</h3>
+
+            <div class="steps-list">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Set Your Hourly Rate</h4>
+                        <p>Start with $5-15/hour depending on your skill level. You're worth it!</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Count ALL Your Time</h4>
+                        <p>Setup, slicing, monitoring, post-processing, packaging. Not just print time!</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Active vs Passive Time</h4>
+                        <p>Print time runs while you do other stuff. Count it at 10-20% of your rate.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Step 3: Add Overhead (The Hidden Costs)</h3>
+
+            <div class="filament-table">
+                <div class="filament-row header">
+                    <span>Cost Type</span>
+                    <span>What It Covers</span>
+                    <span>Rule of Thumb</span>
+                    <span></span>
+                </div>
+                <div class="filament-row pla">
+                    <span>Electricity</span>
+                    <span>Power for printer</span>
+                    <span>$0.10-0.20/hour</span>
+                    <span></span>
+                </div>
+                <div class="filament-row petg">
+                    <span>Wear & Tear</span>
+                    <span>Nozzles, beds, parts</span>
+                    <span>5-10% of material</span>
+                    <span></span>
+                </div>
+                <div class="filament-row tpu">
+                    <span>Failed Prints</span>
+                    <span>Not every print works</span>
+                    <span>10-15% buffer</span>
+                    <span></span>
+                </div>
+            </div>
+
+            <h3>Example Pricing</h3>
+
+            <div class="diagram">
+                <div class="diagram-title">Phone Stand Example</div>
+                <pre class="ascii-diagram">
+    Materials:    50g × $0.02/g              =  $1.00
+    Active Time:  30 min setup @ $10/hr      =  $5.00
+    Print Time:   2 hrs @ $1/hr (passive)    =  $2.00
+    Post-process: 15 min @ $10/hr            =  $2.50
+    Overhead:     15% buffer                 =  $1.58
+    ─────────────────────────────────────────────────
+    COST:                                    = $12.08
+    + Profit (50%):                          =  $6.04
+    ─────────────────────────────────────────────────
+    PRICE:                                   = $18.12
+
+    Round to: $18 or $20 (nice round number)
+                </pre>
+            </div>
+
+            <div class="tip-box">
+                <strong>Market Check:</strong> Search Etsy for similar items. If everyone charges $25 for phone stands and yours costs $18, you're competitive! If they charge $10, rethink your pricing or find a way to add value.
+            </div>
+        </section>
+
+        <!-- Lesson 3: Product Photography -->
+        <section class="lesson" id="lesson-3">
+            <h2>Lesson 3: Product Photography</h2>
+
+            <p>Great photos sell products. You don't need expensive gear - just good technique!</p>
+
+            <h3>The Phone Photo Setup</h3>
+
+            <div class="diagram">
+                <div class="diagram-title">DIY Photo Setup</div>
+                <pre class="ascii-diagram">
+                    ☀️ Window (natural light)
+                    │
+                    │
+        ┌───────────▼───────────┐
+        │                       │
+        │    White poster       │
+        │    board backdrop     │
+        │                       │◀── White foam board
+        │    ┌─────────┐        │    as reflector
+        │    │ PRODUCT │        │
+        │    └─────────┘        │
+        │ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ │
+        │   White paper base    │
+        └───────────────────────┘
+                    ▲
+                    │
+                📱 Phone camera
+                </pre>
+            </div>
+
+            <h3>Photo Checklist</h3>
+
+            <div class="steps-list">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Natural Light is Best</h4>
+                        <p>Shoot near a window during daytime. Avoid harsh direct sunlight - cloudy days are perfect!</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Clean Background</h4>
+                        <p>White, gray, or solid color. Nothing distracting. Poster board works great!</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Multiple Angles</h4>
+                        <p>Front, side, top, detail shots. Show the whole product and close-ups.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Show Scale</h4>
+                        <p>Include a coin, ruler, or common object so buyers know the size.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h4>Lifestyle Shots</h4>
+                        <p>Show the product in use! A phone stand with a phone, a planter with a plant.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comparison-box">
+                <div class="comparison-item bad">
+                    <h4>Bad Photo</h4>
+                    <p>Dark, messy background, blurry, harsh shadows, no scale</p>
+                </div>
+                <div class="comparison-item good">
+                    <h4>Good Photo</h4>
+                    <p>Bright, clean background, sharp focus, soft shadows, shows size</p>
+                </div>
+                <div class="comparison-item good">
+                    <h4>Great Photo</h4>
+                    <p>All the above + lifestyle context + multiple angles</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>Free Editing:</strong> Use your phone's built-in editor to:
+                <ul>
+                    <li>Increase brightness slightly</li>
+                    <li>Crop to remove distractions</li>
+                    <li>Straighten if needed</li>
+                    <li>Don't over-filter - buyers want to see the real product!</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Lesson 4: Where to Sell -->
+        <section class="lesson" id="lesson-4">
+            <h2>Lesson 4: Where to Sell</h2>
+
+            <h3>Start Local (Safest for Young Sellers)</h3>
+
+            <div class="parts-grid">
+                <div class="part-card">
+                    <div class="part-icon">🏠</div>
+                    <h4>Friends & Family</h4>
+                    <p>Safest! Great way to practice and get feedback.</p>
+                </div>
+                <div class="part-card">
+                    <div class="part-icon">🏫</div>
+                    <h4>School Events</h4>
+                    <p>Craft fairs, maker days, fundraisers</p>
+                </div>
+                <div class="part-card">
+                    <div class="part-icon">🎪</div>
+                    <h4>Local Markets</h4>
+                    <p>Farmers markets, craft fairs (with parent)</p>
+                </div>
+                <div class="part-card">
+                    <div class="part-icon">🏪</div>
+                    <h4>Local Shops</h4>
+                    <p>Some stores sell local makers' products</p>
+                </div>
+            </div>
+
+            <h3>Online Platforms (With Parent Help)</h3>
+
+            <div class="filament-table">
+                <div class="filament-row header">
+                    <span>Platform</span>
+                    <span>Best For</span>
+                    <span>Fees</span>
+                    <span>Notes</span>
+                </div>
+                <div class="filament-row pla">
+                    <span>Etsy</span>
+                    <span>Handmade & custom items</span>
+                    <span>~8-15%</span>
+                    <span>Most popular for 3D prints</span>
+                </div>
+                <div class="filament-row petg">
+                    <span>Facebook Marketplace</span>
+                    <span>Local sales</span>
+                    <span>Free (local)</span>
+                    <span>Meet in public places!</span>
+                </div>
+                <div class="filament-row tpu">
+                    <span>eBay</span>
+                    <span>Wide audience</span>
+                    <span>~13%</span>
+                    <span>More competition</span>
+                </div>
+                <div class="filament-row abs">
+                    <span>Your Own Website</span>
+                    <span>Building a brand</span>
+                    <span>Hosting costs</span>
+                    <span>Most control, most work</span>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <strong>Online Safety Rules:</strong>
+                <ul>
+                    <li>Use a business name, not your real name</li>
+                    <li>Get a PO Box for shipping - never use home address</li>
+                    <li>Have parents handle all payments</li>
+                    <li>Use platform messaging - never personal phone/email</li>
+                    <li>If something feels wrong, tell an adult immediately</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Lesson 5: Customer Service -->
+        <section class="lesson" id="lesson-5">
+            <h2>Lesson 5: Customer Service</h2>
+
+            <p>Happy customers = repeat customers + referrals. Treat them well!</p>
+
+            <h3>Communication Tips</h3>
+
+            <div class="steps-list">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Respond Quickly</h4>
+                        <p>Answer questions within 24 hours. Set expectations if you're busy with school.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Be Professional</h4>
+                        <p>Use proper spelling and grammar. Be friendly but businesslike.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Set Clear Expectations</h4>
+                        <p>Tell customers exactly what they're getting and when they'll get it.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Handle Problems Gracefully</h4>
+                        <p>If something goes wrong, apologize and fix it. Offer refunds or replacements when needed.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>What to Include With Orders</h3>
+
+            <div class="info-box">
+                <strong>Packaging Touches:</strong>
+                <ul>
+                    <li>Thank you note (handwritten is best!)</li>
+                    <li>Care instructions if needed</li>
+                    <li>Business card or flyer for reorders</li>
+                    <li>Protective packaging so it arrives safe</li>
+                    <li>A small extra (sticker, small print) delights customers!</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- This Week's Build -->
+        <section class="lesson weekly-build" id="weekly-build">
+            <h2>This Week's Build: Your First Product</h2>
+
+            <div class="build-overview">
+                <p>Time to put it all together! Create a product you could actually sell. Design or choose something useful, print it beautifully, and photograph it like a pro.</p>
+
+                <div class="build-stats">
+                    <div class="stat">
+                        <span class="stat-value">Your Choice</span>
+                        <span class="stat-label">Product</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">Calculate It</span>
+                        <span class="stat-label">Price</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">3+ Photos</span>
+                        <span class="stat-label">Portfolio</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3>The Challenge</h3>
+
+            <div class="steps-list">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Choose a Product</h4>
+                        <p>Something useful that people would buy. Personalized items are great - nameplates, custom gifts, etc.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Print It Perfectly</h4>
+                        <p>Use everything you've learned. No stringing, good adhesion, clean finish.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Calculate Your Price</h4>
+                        <p>Use the formula from Lesson 2. Write it down!</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Photograph It</h4>
+                        <p>At least 3 photos: front, detail, lifestyle shot.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h4>Write a Description</h4>
+                        <p>What is it? What's it made of? What size? Who is it for?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>Product Ideas:</strong>
+                <ul>
+                    <li>Personalized keychain with someone's name</li>
+                    <li>Desk organizer or pencil cup</li>
+                    <li>Phone/tablet stand</li>
+                    <li>Custom game piece or dice tower</li>
+                    <li>Decorative planter</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Share Section -->
+        <section class="lesson" id="share">
+            <h2>Share Your First Product</h2>
+
+            <p>Built your first sellable product? Share it with the community!</p>
+
+            <div class="share-steps">
+                <div class="share-step">
+                    <span class="share-icon">📸</span>
+                    <h4>1. Pro Photos</h4>
+                    <p>Your best product photography</p>
+                </div>
+                <div class="share-step">
+                    <span class="share-icon">💰</span>
+                    <h4>2. Price Breakdown</h4>
+                    <p>Show how you calculated it</p>
+                </div>
+                <div class="share-step">
+                    <span class="share-icon">🔀</span>
+                    <h4>3. Fork & Add</h4>
+                    <p>Add to community-prints/products/</p>
+                </div>
+                <div class="share-step">
+                    <span class="share-icon">🚀</span>
+                    <h4>4. Launch!</h4>
+                    <p>You're officially a maker-entrepreneur!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements -->
+        <section class="achievements">
+            <h3>Achievements Unlocked</h3>
+            <div class="achievement-badges">
+                <div class="badge">
+                    <span class="badge-icon">💼</span>
+                    <span class="badge-text">Entrepreneur</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">📸</span>
+                    <span class="badge-text">Photo Pro</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">🧮</span>
+                    <span class="badge-text">Pricing Wizard</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Module Complete -->
+        <section class="module-complete">
+            <h2>You're Ready to Sell!</h2>
+            <p>You now have the knowledge to turn your 3D printing skills into a real business.</p>
+
+            <div class="next-steps">
+                <h3>Your Next Steps</h3>
+                <ul>
+                    <li>Talk to your parents about starting small</li>
+                    <li>Create 2-3 products for your "catalog"</li>
+                    <li>Practice your photography skills</li>
+                    <li>Start with friends and family</li>
+                    <li>Keep learning and improving!</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <strong>Remember the Cycle:</strong>
+                <p><strong>Build → Sell → Share → Create</strong></p>
+                <p>The money you earn lets you buy better equipment and materials. The experience you share helps others. And creating original designs is the ultimate level-up!</p>
+            </div>
+
+            <div class="module-nav">
+                <a href="advanced.html" class="btn btn-secondary">← Previous: Level Up</a>
+                <a href="../index.html" class="btn btn-primary">Back to Home →</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Tutor Button -->
+    <button id="tutor-fab" class="tutor-fab" aria-label="Open LayerBEE tutor">
+        <span class="fab-icon">🐝</span>
+        <span class="fab-text">Ask LayerBEE</span>
+    </button>
+
+    <footer class="site-footer">
+        <p>Built for young makers with the <strong>Producer Mindset</strong></p>
+        <p class="footer-note">100% free. No data leaves your browser. - LayerBEE</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>
