@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Printing Basics | LayerBEE</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐝</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/tutor.css">
+    <link rel="stylesheet" href="../css/module.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🐝</span>
+                <span class="logo-text">LayerBEE</span>
+            </a>
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#modules" class="nav-link active">Learn</a></li>
+                    <li><a href="troubleshoot.html" class="nav-link">Fix Problems</a></li>
+                    <li><a href="business.html" class="nav-link">Start Selling</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon-light">☀️</span>
+                    <span class="theme-icon-dark">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="module-content">
+        <div class="module-header-section">
+            <a href="../index.html#modules" class="back-link">← Back to Modules</a>
+            <span class="module-badge">Module 01</span>
+            <h1>🖨️ 3D Printing Basics</h1>
+            <p class="module-description">Learn how FDM printers work, understand filament types, and get your first successful print!</p>
+        </div>
+
+        <!-- Lesson 1: What is 3D Printing? -->
+        <section class="lesson" id="lesson-1">
+            <h2>What is 3D Printing?</h2>
+
+            <div class="info-box">
+                <strong>🐝 Fun Fact:</strong> 3D printing was invented in 1984 - that's probably before your parents were born!
+            </div>
+
+            <p>3D printing (also called <strong>additive manufacturing</strong>) builds objects layer by layer from the bottom up. It's like building with really thin Lego bricks, but the "bricks" are made of melted plastic!</p>
+
+            <h3>FDM Printing</h3>
+            <p><strong>FDM</strong> stands for <strong>Fused Deposition Modeling</strong>. Don't worry about the fancy name - here's what it means:</p>
+
+            <ul>
+                <li><strong>Fused</strong> = Melted together</li>
+                <li><strong>Deposition</strong> = Putting down material</li>
+                <li><strong>Modeling</strong> = Making a shape</li>
+            </ul>
+
+            <p>So FDM just means "melting plastic and putting it down in layers to make a shape." Simple!</p>
+
+            <div class="diagram">
+                <div class="diagram-title">How FDM Works</div>
+                <pre class="ascii-diagram">
+    Filament Spool
+         🎡
+          │
+          ▼
+    ┌─────────────┐
+    │  Extruder   │ ← Pushes filament
+    │   Motor     │
+    └──────┬──────┘
+           │
+           ▼
+    ┌─────────────┐
+    │   Hotend    │ ← Melts plastic (200°C!)
+    │   🔥🔥🔥    │
+    └──────┬──────┘
+           │
+           ▼
+        Nozzle ← Tiny hole (0.4mm)
+           │
+     ═══════════════ ← Printed layers
+     ═══════════════
+    ┌───────────────┐
+    │   Print Bed   │ ← Where the print sticks
+    └───────────────┘
+                </pre>
+            </div>
+
+            <button class="ask-tutor-btn" data-question="Explain FDM 3D printing like I'm 10 years old">
+                🐝 Ask LayerBEE to explain more
+            </button>
+        </section>
+
+        <!-- Lesson 2: Parts of a 3D Printer -->
+        <section class="lesson" id="lesson-2">
+            <h2>Parts of a 3D Printer</h2>
+
+            <p>Let's learn the main parts you'll hear about:</p>
+
+            <div class="parts-grid">
+                <div class="part-card">
+                    <div class="part-icon">🛏️</div>
+                    <h4>Print Bed</h4>
+                    <p>The flat surface where your print is built. Can be heated (helps prints stick better).</p>
+                    <div class="warning-tag">⚠️ Gets HOT! Don't touch during printing.</div>
+                </div>
+
+                <div class="part-card">
+                    <div class="part-icon">🔥</div>
+                    <h4>Hotend</h4>
+                    <p>Heats up to 200°C+ to melt the filament. The nozzle is at the tip.</p>
+                    <div class="warning-tag">⚠️ VERY hot! Never touch.</div>
+                </div>
+
+                <div class="part-card">
+                    <div class="part-icon">⚙️</div>
+                    <h4>Extruder</h4>
+                    <p>The motor that pushes filament into the hotend. Like squeezing a tube of toothpaste!</p>
+                </div>
+
+                <div class="part-card">
+                    <div class="part-icon">🎯</div>
+                    <h4>Nozzle</h4>
+                    <p>Tiny brass tip (usually 0.4mm) where melted plastic comes out. Can be swapped for different sizes.</p>
+                </div>
+
+                <div class="part-card">
+                    <div class="part-icon">🎡</div>
+                    <h4>Filament Spool</h4>
+                    <p>The roll of plastic "wire" that gets fed into the printer. Comes in many colors!</p>
+                </div>
+
+                <div class="part-card">
+                    <div class="part-icon">🧠</div>
+                    <h4>Controller Board</h4>
+                    <p>The computer brain that controls all the motors and heaters.</p>
+                </div>
+            </div>
+
+            <button class="ask-tutor-btn" data-question="What are the most important parts of a 3D printer to understand?">
+                🐝 Ask LayerBEE about printer parts
+            </button>
+        </section>
+
+        <!-- Lesson 3: Filament Types -->
+        <section class="lesson" id="lesson-3">
+            <h2>Filament Types</h2>
+
+            <p>Filament is the plastic "wire" that gets melted to make your prints. Here are the main types:</p>
+
+            <div class="filament-table">
+                <div class="filament-row header">
+                    <span>Type</span>
+                    <span>Best For</span>
+                    <span>Difficulty</span>
+                    <span>Temp</span>
+                </div>
+
+                <div class="filament-row pla">
+                    <span><strong>PLA</strong></span>
+                    <span>Beginners! Toys, decorations, prototypes</span>
+                    <span>⭐ Easy</span>
+                    <span>190-220°C</span>
+                </div>
+
+                <div class="filament-row petg">
+                    <span><strong>PETG</strong></span>
+                    <span>Stronger parts, outdoor use</span>
+                    <span>⭐⭐ Medium</span>
+                    <span>220-250°C</span>
+                </div>
+
+                <div class="filament-row tpu">
+                    <span><strong>TPU</strong></span>
+                    <span>Flexible parts (phone cases, toys)</span>
+                    <span>⭐⭐⭐ Tricky</span>
+                    <span>210-230°C</span>
+                </div>
+
+                <div class="filament-row abs">
+                    <span><strong>ABS</strong></span>
+                    <span>Heat-resistant, strong (like Lego!)</span>
+                    <span>⭐⭐⭐ Hard</span>
+                    <span>220-250°C</span>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>🐝 LayerBEE's Tip:</strong> Start with PLA! It's the easiest to print, doesn't smell bad, and comes in tons of cool colors. You can try other materials once you've got some experience.
+            </div>
+
+            <h3>PLA - Your Best Friend</h3>
+            <p>PLA (Polylactic Acid) is made from plants like corn! Here's why it's great for beginners:</p>
+            <ul>
+                <li>✅ Prints at lower temperatures</li>
+                <li>✅ Doesn't need a heated bed (but it helps)</li>
+                <li>✅ Doesn't warp much</li>
+                <li>✅ Smells slightly sweet when printing</li>
+                <li>✅ Biodegradable (better for environment)</li>
+                <li>✅ Cheapest filament type</li>
+            </ul>
+
+            <button class="ask-tutor-btn" data-question="What's the difference between PLA and PETG?">
+                🐝 Compare filament types
+            </button>
+        </section>
+
+        <!-- Lesson 4: Your First Print -->
+        <section class="lesson" id="lesson-4">
+            <h2>Getting Your First Print Right</h2>
+
+            <p>The secret to good prints? A perfect <strong>first layer</strong>!</p>
+
+            <div class="steps-list">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <div class="step-content">
+                        <h4>Level Your Bed</h4>
+                        <p>The nozzle should be the same distance from the bed everywhere. Use the "paper test" - a piece of paper should have slight drag when pulled between the nozzle and bed.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <div class="step-content">
+                        <h4>Clean the Bed</h4>
+                        <p>Use isopropyl alcohol (IPA) to remove oils and dust. A clean bed = better adhesion!</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <div class="step-content">
+                        <h4>Heat It Up</h4>
+                        <p>For PLA: Nozzle ~200°C, Bed ~60°C. Let it heat fully before starting.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <div class="step-content">
+                        <h4>Watch the First Layer</h4>
+                        <p>Stay and watch! The first layer should be slightly squished into the bed - not too high, not too squished.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comparison-box">
+                <div class="comparison-item bad">
+                    <h4>❌ Too High</h4>
+                    <p>Lines don't stick, spaghetti mess</p>
+                </div>
+                <div class="comparison-item good">
+                    <h4>✅ Just Right</h4>
+                    <p>Lines slightly squished, smooth</p>
+                </div>
+                <div class="comparison-item bad">
+                    <h4>❌ Too Low</h4>
+                    <p>Nozzle scrapes, nothing comes out</p>
+                </div>
+            </div>
+
+            <button class="ask-tutor-btn" data-question="My first layer isn't sticking, what should I check?">
+                🐝 Help! My print won't stick
+            </button>
+        </section>
+
+        <!-- Quiz Section -->
+        <section class="lesson quiz-section" id="quiz">
+            <h2>🎯 Quick Quiz!</h2>
+            <p>Test what you've learned! Don't worry - you can retake it as many times as you want.</p>
+
+            <div class="quiz-container" id="basics-quiz">
+                <div class="quiz-question" data-question="1">
+                    <p><strong>1.</strong> What does FDM stand for?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="false">Fast Digital Making</button>
+                        <button class="quiz-option" data-correct="true">Fused Deposition Modeling</button>
+                        <button class="quiz-option" data-correct="false">Filament Design Machine</button>
+                        <button class="quiz-option" data-correct="false">Factory Direct Manufacturing</button>
+                    </div>
+                </div>
+
+                <div class="quiz-question" data-question="2">
+                    <p><strong>2.</strong> Which filament is best for beginners?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="false">ABS</button>
+                        <button class="quiz-option" data-correct="false">TPU</button>
+                        <button class="quiz-option" data-correct="true">PLA</button>
+                        <button class="quiz-option" data-correct="false">Nylon</button>
+                    </div>
+                </div>
+
+                <div class="quiz-question" data-question="3">
+                    <p><strong>3.</strong> What's the typical nozzle size on most printers?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="false">0.2mm</button>
+                        <button class="quiz-option" data-correct="true">0.4mm</button>
+                        <button class="quiz-option" data-correct="false">1.0mm</button>
+                        <button class="quiz-option" data-correct="false">2.0mm</button>
+                    </div>
+                </div>
+
+                <div class="quiz-question" data-question="4">
+                    <p><strong>4.</strong> What should you use to clean your print bed?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="false">Water</button>
+                        <button class="quiz-option" data-correct="true">Isopropyl alcohol</button>
+                        <button class="quiz-option" data-correct="false">Soap</button>
+                        <button class="quiz-option" data-correct="false">Nothing, don't clean it</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-results" id="quiz-results" style="display: none;">
+                <h3>Your Score: <span id="quiz-score">0</span>/4</h3>
+                <p id="quiz-message"></p>
+                <button class="btn btn-secondary" id="retake-quiz">Try Again</button>
+            </div>
+        </section>
+
+        <!-- Module Complete -->
+        <section class="module-complete" id="complete">
+            <h2>🎉 Module Complete!</h2>
+            <p>Awesome job! You now understand the basics of 3D printing.</p>
+
+            <div class="next-steps">
+                <h3>What's Next?</h3>
+                <ul>
+                    <li>Try printing a simple test cube on your printer</li>
+                    <li>Experiment with different colors of PLA</li>
+                    <li>Move on to Module 2: The Print Workflow</li>
+                </ul>
+            </div>
+
+            <div class="module-nav">
+                <a href="../index.html#modules" class="btn btn-secondary">← All Modules</a>
+                <a href="workflow.html" class="btn btn-primary">Next: Print Workflow →</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Tutor Panel (same as index) -->
+    <div id="tutor-panel" class="tutor-panel" aria-hidden="true">
+        <div class="tutor-header">
+            <h2>🐝 LayerBEE</h2>
+            <div class="tutor-status" id="tutor-status">
+                <span class="status-dot"></span>
+                <span class="status-text">Loading...</span>
+            </div>
+            <button id="close-tutor" class="tutor-close" aria-label="Close tutor">×</button>
+        </div>
+        <div class="tutor-messages" id="tutor-messages" role="log" aria-live="polite">
+            <div class="message bot-message">
+                <span class="message-avatar">🐝</span>
+                <div class="message-content">
+                    <p><strong>Hi! I'm here to help with this module!</strong></p>
+                    <p>Ask me anything about 3D printing basics.</p>
+                </div>
+            </div>
+        </div>
+        <div class="tutor-mode-selector">
+            <button class="mode-btn active" data-mode="learn">📚 Learn</button>
+            <button class="mode-btn" data-mode="troubleshoot">🔧 Fix</button>
+            <button class="mode-btn" data-mode="quiz">❓ Quiz</button>
+        </div>
+        <div class="tutor-input-area">
+            <div id="model-loading" class="model-loading">
+                <div class="loading-spinner"></div>
+                <span id="loading-text">Initializing LayerBEE...</span>
+                <div class="loading-progress">
+                    <div class="loading-bar" id="loading-bar"></div>
+                </div>
+            </div>
+            <form id="tutor-form" class="tutor-form">
+                <label for="tutor-input" class="visually-hidden">Ask a question</label>
+                <input type="text" id="tutor-input" placeholder="Ask about 3D printing basics..." autocomplete="off" disabled>
+                <button type="submit" id="tutor-submit" disabled aria-label="Send">→</button>
+            </form>
+        </div>
+    </div>
+
+    <button id="tutor-fab" class="tutor-fab" aria-label="Open LayerBEE tutor">
+        <span class="fab-icon">🐝</span>
+        <span class="fab-text">Ask LayerBEE</span>
+    </button>
+
+    <footer class="site-footer">
+        <p>Built for young makers with the <strong>Producer Mindset</strong> 🐝</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/tutor-flow.js"></script>
+    <script src="../js/tutor-ui.js"></script>
+    <script src="../js/module.js"></script>
+</body>
+</html>

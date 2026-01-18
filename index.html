@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn 3D printing with LayerBEE - your AI-powered tutor. Free, fun, and runs 100% in your browser!">
+    <title>LayerBEE - 3D Printing Tutor for Young Makers</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐝</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/tutor.css">
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <span class="logo-icon" aria-hidden="true">🐝</span>
+                <span class="logo-text">LayerBEE</span>
+            </a>
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="#modules" class="nav-link">Learn</a></li>
+                    <li><a href="modules/troubleshoot.html" class="nav-link">Fix Problems</a></li>
+                    <li><a href="modules/business.html" class="nav-link">Start Selling</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <span class="theme-icon-light" aria-hidden="true">☀️</span>
+                    <span class="theme-icon-dark" aria-hidden="true">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">🐝 Free AI Tutor - No Account Needed!</div>
+                <h1>Learn <span class="highlight">3D Printing</span> the Fun Way</h1>
+                <p class="hero-subtitle">
+                    From first print to running your own shop - LayerBEE helps young makers
+                    level up their 3D printing skills. 100% free, runs in your browser!
+                </p>
+                <div class="hero-cta">
+                    <a href="#modules" class="btn btn-primary">Start Learning</a>
+                    <button id="open-tutor" class="btn btn-secondary">
+                        <span class="btn-icon">🐝</span> Ask LayerBEE
+                    </button>
+                </div>
+                <p class="hero-note">
+                    <strong>No downloads.</strong> No accounts. Your progress saves in your browser.
+                </p>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+                <div class="print-animation">
+                    <div class="print-bed"></div>
+                    <div class="print-object">
+                        <div class="layer"></div>
+                        <div class="layer"></div>
+                        <div class="layer"></div>
+                        <div class="layer"></div>
+                        <div class="layer"></div>
+                    </div>
+                    <div class="nozzle"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Overview -->
+        <section id="progress" class="progress-section">
+            <h2>Your Progress</h2>
+            <div class="progress-overview">
+                <div class="progress-stat">
+                    <span class="stat-number" id="modules-completed">0</span>
+                    <span class="stat-label">Modules Done</span>
+                </div>
+                <div class="progress-stat">
+                    <span class="stat-number" id="prints-logged">0</span>
+                    <span class="stat-label">Prints Logged</span>
+                </div>
+                <div class="progress-stat">
+                    <span class="stat-number" id="problems-solved">0</span>
+                    <span class="stat-label">Problems Solved</span>
+                </div>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="overall-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-fill"></span>
+                </div>
+                <span class="progress-text" id="progress-text">0% Complete</span>
+            </div>
+        </section>
+
+        <!-- Quick Help Cards -->
+        <section class="quick-help">
+            <h2>Quick Help</h2>
+            <div class="help-cards">
+                <button class="help-card" data-question="My print isn't sticking to the bed">
+                    <span class="help-icon">🔧</span>
+                    <span class="help-text">Print not sticking?</span>
+                </button>
+                <button class="help-card" data-question="I'm getting stringing between parts">
+                    <span class="help-icon">🕸️</span>
+                    <span class="help-text">Seeing strings?</span>
+                </button>
+                <button class="help-card" data-question="What's the best filament for beginners?">
+                    <span class="help-icon">🎨</span>
+                    <span class="help-text">Which filament?</span>
+                </button>
+                <button class="help-card" data-question="How do I price my 3D prints to sell?">
+                    <span class="help-icon">💰</span>
+                    <span class="help-text">Pricing prints?</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Modules Grid -->
+        <section id="modules" class="modules-section">
+            <h2>Learning Modules</h2>
+            <p class="section-subtitle">Go from beginner to running your own print shop!</p>
+
+            <div class="modules-grid">
+                <article class="module-card" data-module="basics">
+                    <div class="module-header">
+                        <span class="module-number">01</span>
+                        <span class="module-status" id="status-basics" aria-label="Not started">○</span>
+                    </div>
+                    <div class="module-icon">🖨️</div>
+                    <h3>3D Printing Basics</h3>
+                    <p>Learn how FDM printers work, filament types, and get your first successful print!</p>
+                    <div class="module-tags">
+                        <span class="tag">Beginner</span>
+                        <span class="tag">~30 min</span>
+                    </div>
+                    <a href="modules/basics.html" class="module-link">Start Module →</a>
+                </article>
+
+                <article class="module-card" data-module="workflow">
+                    <div class="module-header">
+                        <span class="module-number">02</span>
+                        <span class="module-status" id="status-workflow" aria-label="Not started">○</span>
+                    </div>
+                    <div class="module-icon">🔄</div>
+                    <h3>The Print Workflow</h3>
+                    <p>Design → Slice → Print! Master the full process from Tinkercad to finished print.</p>
+                    <div class="module-tags">
+                        <span class="tag">Beginner</span>
+                        <span class="tag">~45 min</span>
+                    </div>
+                    <a href="modules/workflow.html" class="module-link">Start Module →</a>
+                </article>
+
+                <article class="module-card" data-module="troubleshoot">
+                    <div class="module-header">
+                        <span class="module-number">03</span>
+                        <span class="module-status" id="status-troubleshoot" aria-label="Not started">○</span>
+                    </div>
+                    <div class="module-icon">🔧</div>
+                    <h3>Troubleshooting</h3>
+                    <p>Fix common problems: stringing, warping, bed adhesion, clogs, and more.</p>
+                    <div class="module-tags">
+                        <span class="tag">Intermediate</span>
+                        <span class="tag">Reference</span>
+                    </div>
+                    <a href="modules/troubleshoot.html" class="module-link">Start Module →</a>
+                </article>
+
+                <article class="module-card" data-module="advanced">
+                    <div class="module-header">
+                        <span class="module-number">04</span>
+                        <span class="module-status" id="status-advanced" aria-label="Not started">○</span>
+                    </div>
+                    <div class="module-icon">⚡</div>
+                    <h3>Level Up</h3>
+                    <p>Multi-color prints, speed tuning, post-processing, and advanced techniques.</p>
+                    <div class="module-tags">
+                        <span class="tag">Intermediate</span>
+                        <span class="tag">~60 min</span>
+                    </div>
+                    <a href="modules/advanced.html" class="module-link">Start Module →</a>
+                </article>
+
+                <article class="module-card featured" data-module="business">
+                    <div class="module-header">
+                        <span class="module-number">05</span>
+                        <span class="module-status" id="status-business" aria-label="Not started">○</span>
+                    </div>
+                    <div class="module-icon">💼</div>
+                    <h3>Start Your Print Shop</h3>
+                    <p>Turn your skills into a small business! Learn pricing, photos, and selling safely.</p>
+                    <div class="module-tags">
+                        <span class="tag">All Levels</span>
+                        <span class="tag">Entrepreneurship</span>
+                    </div>
+                    <a href="modules/business.html" class="module-link">Start Module →</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Printer Setup Section -->
+        <section class="setup-section">
+            <h2>Tell LayerBEE About Your Setup</h2>
+            <p>Help me give you better advice by telling me what you're working with!</p>
+
+            <form id="setup-form" class="setup-form">
+                <div class="form-group">
+                    <label for="printer-type">What printer do you have?</label>
+                    <select id="printer-type" name="printerType">
+                        <option value="">Select your printer...</option>
+                        <option value="ender3">Creality Ender 3 (any version)</option>
+                        <option value="ender3v3">Creality Ender 3 V3</option>
+                        <option value="k1">Creality K1 / K1 Max</option>
+                        <option value="bambu-a1">Bambu Lab A1 / A1 Mini</option>
+                        <option value="bambu-p1">Bambu Lab P1S / P1P</option>
+                        <option value="bambu-x1">Bambu Lab X1 Carbon</option>
+                        <option value="prusa-mini">Prusa Mini</option>
+                        <option value="prusa-mk4">Prusa MK4</option>
+                        <option value="other">Other FDM Printer</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="slicer">What slicer do you use?</label>
+                    <select id="slicer" name="slicer">
+                        <option value="">Select your slicer...</option>
+                        <option value="cura">Cura (free, works with most printers)</option>
+                        <option value="bambu-studio">Bambu Studio</option>
+                        <option value="prusaslicer">PrusaSlicer</option>
+                        <option value="orcaslicer">OrcaSlicer</option>
+                        <option value="creality-print">Creality Print</option>
+                        <option value="not-sure">Not sure yet</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save My Setup</button>
+            </form>
+        </section>
+
+        <!-- Safety Reminder -->
+        <section class="safety-section">
+            <div class="safety-content">
+                <h2>⚠️ Stay Safe!</h2>
+                <ul>
+                    <li><strong>Hot surfaces:</strong> The nozzle and bed get VERY hot. Never touch during or right after printing!</li>
+                    <li><strong>Ventilation:</strong> Print in a well-ventilated area, especially with ABS or ASA</li>
+                    <li><strong>Supervision:</strong> Don't leave prints unattended for too long</li>
+                    <li><strong>Online safety:</strong> If you start selling, never share personal info - get a parent to help!</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- AI Tutor Chat Panel -->
+    <div id="tutor-panel" class="tutor-panel" aria-hidden="true">
+        <div class="tutor-header">
+            <h2>🐝 LayerBEE</h2>
+            <div class="tutor-status" id="tutor-status">
+                <span class="status-dot"></span>
+                <span class="status-text">Loading...</span>
+            </div>
+            <button id="close-tutor" class="tutor-close" aria-label="Close tutor">×</button>
+        </div>
+
+        <div class="tutor-messages" id="tutor-messages" role="log" aria-live="polite">
+            <div class="message bot-message">
+                <span class="message-avatar">🐝</span>
+                <div class="message-content">
+                    <p><strong>Bzz! I'm LayerBEE, your 3D printing buddy!</strong></p>
+                    <p>I run entirely in your browser - no data sent anywhere!</p>
+                    <p><strong>First time?</strong> I'll download a small AI model (~500MB). This only happens once!</p>
+                    <p>Try asking me:</p>
+                    <ul>
+                        <li>"Why is my print warping?"</li>
+                        <li>"What's the difference between PLA and PETG?"</li>
+                        <li>"Quiz me on 3D printing basics"</li>
+                        <li>"How do I price my prints?"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="tutor-mode-selector">
+            <button class="mode-btn active" data-mode="learn">📚 Learn</button>
+            <button class="mode-btn" data-mode="troubleshoot">🔧 Fix</button>
+            <button class="mode-btn" data-mode="quiz">❓ Quiz</button>
+            <button class="mode-btn" data-mode="business">💼 Business</button>
+        </div>
+
+        <div class="tutor-input-area">
+            <div id="model-loading" class="model-loading">
+                <div class="loading-spinner"></div>
+                <span id="loading-text">Initializing LayerBEE...</span>
+                <div class="loading-progress">
+                    <div class="loading-bar" id="loading-bar"></div>
+                </div>
+            </div>
+            <form id="tutor-form" class="tutor-form">
+                <label for="tutor-input" class="visually-hidden">Ask a question</label>
+                <input type="text" id="tutor-input" placeholder="Ask about 3D printing..." autocomplete="off" disabled>
+                <button type="submit" id="tutor-submit" disabled aria-label="Send">→</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating Tutor Button -->
+    <button id="tutor-fab" class="tutor-fab" aria-label="Open LayerBEE tutor">
+        <span class="fab-icon">🐝</span>
+        <span class="fab-text">Ask LayerBEE</span>
+    </button>
+
+    <footer class="site-footer">
+        <p>Built for young makers with the <strong>Producer Mindset</strong> 🐝</p>
+        <p class="footer-note">100% free. No data leaves your browser. Built with WebLLM.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/tutor-flow.js"></script>
+    <script src="js/tutor-ui.js"></script>
+</body>
+</html>

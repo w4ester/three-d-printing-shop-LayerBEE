@@ -1,0 +1,415 @@
+/* ============================================================
+   LayerBEE Tutor Chat Panel Styles
+   ============================================================ */
+
+/* ----------------------
+   FLOATING ACTION BUTTON
+   ---------------------- */
+.tutor-fab {
+    position: fixed;
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-lg);
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    border: none;
+    border-radius: var(--radius-full);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-fast);
+    z-index: 90;
+}
+
+.tutor-fab:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(245, 158, 11, 0.4);
+}
+
+.fab-icon {
+    font-size: 1.5rem;
+}
+
+/* Hide FAB when panel is open */
+.tutor-panel[aria-hidden="false"] ~ .tutor-fab {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+}
+
+/* ----------------------
+   TUTOR PANEL
+   ---------------------- */
+.tutor-panel {
+    position: fixed;
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+    width: 400px;
+    max-width: calc(100vw - 2rem);
+    height: 600px;
+    max-height: calc(100vh - 2rem);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px) scale(0.95);
+    transition: all var(--transition-normal);
+}
+
+.tutor-panel[aria-hidden="false"] {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+/* ----------------------
+   TUTOR HEADER
+   ---------------------- */
+.tutor-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.tutor-header h2 {
+    flex: 1;
+    font-size: 1.125rem;
+    margin: 0;
+}
+
+.tutor-status {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: 0.75rem;
+    opacity: 0.9;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.tutor-status.ready .status-dot {
+    background: var(--color-success);
+    animation: none;
+}
+
+.tutor-status.loading .status-dot {
+    background: var(--color-warning);
+}
+
+.tutor-status.error .status-dot {
+    background: var(--color-error);
+    animation: none;
+}
+
+.tutor-close {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: var(--space-xs);
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity var(--transition-fast);
+}
+
+.tutor-close:hover {
+    opacity: 1;
+}
+
+/* ----------------------
+   MESSAGES AREA
+   ---------------------- */
+.tutor-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.message {
+    display: flex;
+    gap: var(--space-sm);
+    max-width: 90%;
+}
+
+.bot-message {
+    align-self: flex-start;
+}
+
+.user-message {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.message-avatar {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.message-content {
+    background: var(--color-bg-alt);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+}
+
+.user-message .message-content {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+.message-content p:last-child {
+    margin-bottom: 0;
+}
+
+.message-content ul {
+    margin: var(--space-sm) 0;
+    padding-left: var(--space-lg);
+}
+
+.message-content li {
+    margin-bottom: var(--space-xs);
+}
+
+.message-content code {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 0.1em 0.3em;
+    border-radius: var(--radius-sm);
+    font-size: 0.85em;
+}
+
+.message-content pre {
+    margin: var(--space-sm) 0;
+    padding: var(--space-sm);
+    font-size: 0.8rem;
+}
+
+/* Typing indicator */
+.typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: var(--space-md);
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background: var(--color-text-muted);
+    border-radius: 50%;
+    animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) { animation-delay: 0s; }
+.typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+.typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-8px); }
+}
+
+/* ----------------------
+   MODE SELECTOR
+   ---------------------- */
+.tutor-mode-selector {
+    display: flex;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-bg-alt);
+    border-top: 1px solid var(--color-border);
+}
+
+.mode-btn {
+    flex: 1;
+    padding: var(--space-xs) var(--space-sm);
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.mode-btn:hover {
+    background: var(--color-bg);
+    border-color: var(--color-primary);
+}
+
+.mode-btn.active {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    border-color: var(--color-primary);
+}
+
+/* ----------------------
+   INPUT AREA
+   ---------------------- */
+.tutor-input-area {
+    padding: var(--space-md);
+    border-top: 1px solid var(--color-border);
+}
+
+.tutor-form {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.tutor-form input {
+    flex: 1;
+    padding: var(--space-md);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    background: var(--color-bg-alt);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-full);
+    transition: border-color var(--transition-fast);
+}
+
+.tutor-form input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.tutor-form input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.tutor-form button {
+    width: 48px;
+    height: 48px;
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.tutor-form button:hover:not(:disabled) {
+    transform: scale(1.1);
+}
+
+.tutor-form button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ----------------------
+   LOADING STATE
+   ---------------------- */
+.model-loading {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    text-align: center;
+}
+
+.model-loading.visible {
+    display: flex;
+}
+
+.loading-spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid var(--color-border);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+#loading-text {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+}
+
+.loading-progress {
+    width: 100%;
+    max-width: 200px;
+    height: 4px;
+    background: var(--color-border);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.loading-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--color-primary);
+    transition: width var(--transition-fast);
+}
+
+/* Hide form when loading */
+.model-loading.visible + .tutor-form {
+    display: none;
+}
+
+/* ----------------------
+   RESPONSIVE
+   ---------------------- */
+@media (max-width: 480px) {
+    .tutor-panel {
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        max-height: 100%;
+        border-radius: 0;
+    }
+
+    .tutor-fab {
+        bottom: var(--space-md);
+        right: var(--space-md);
+    }
+
+    .fab-text {
+        display: none;
+    }
+
+    .tutor-mode-selector {
+        flex-wrap: wrap;
+    }
+
+    .mode-btn {
+        flex: 1 1 45%;
+    }
+}
