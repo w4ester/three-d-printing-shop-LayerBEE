@@ -267,8 +267,23 @@ pre code {
     font-size: 1.75rem;
 }
 
+.logo-img {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    object-fit: cover;
+}
+
 .logo:hover {
     text-decoration: none;
+}
+
+/* Hero mascot image */
+.hero-mascot-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
 }
 
 /* Navigation */

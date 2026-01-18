@@ -91,6 +91,14 @@
     margin: 0;
 }
 
+.tutor-logo-img {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
 .tutor-status {
     display: flex;
     align-items: center;
@@ -171,6 +179,14 @@
 
 .message-avatar {
     font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.message-avatar-img {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
     flex-shrink: 0;
 }
 
