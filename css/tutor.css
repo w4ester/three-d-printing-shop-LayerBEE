@@ -216,10 +216,17 @@
 }
 
 .message-content code {
-    background: rgba(0, 0, 0, 0.1);
-    padding: 0.1em 0.3em;
+    background: var(--color-border);
+    color: var(--color-text);
+    padding: 0.2em 0.4em;
     border-radius: var(--radius-sm);
     font-size: 0.85em;
+}
+
+/* Code in user messages needs different treatment */
+.user-message .message-content code {
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--color-secondary);
 }
 
 .message-content pre {
@@ -267,6 +274,7 @@
     flex: 1;
     padding: var(--space-xs) var(--space-sm);
     background: transparent;
+    color: var(--color-text);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     font-family: var(--font-sans);
@@ -306,9 +314,15 @@
     font-family: var(--font-sans);
     font-size: 1rem;
     background: var(--color-bg-alt);
+    color: var(--color-text);
     border: 2px solid var(--color-border);
     border-radius: var(--radius-full);
     transition: border-color var(--transition-fast);
+}
+
+.tutor-form input::placeholder {
+    color: var(--color-text-muted);
+    opacity: 1;
 }
 
 .tutor-form input:focus {

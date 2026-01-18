@@ -26,6 +26,10 @@
     --color-code-bg: #1A1A1A;       /* Black like printer frame */
     --color-code-text: #F5C518;     /* Yellow text on black */
 
+    /* Link colors with good contrast */
+    --color-link: #B8860B;          /* Dark goldenrod - readable on cream */
+    --color-link-hover: #8B6914;    /* Darker on hover */
+
     /* Typography */
     --font-sans: 'Space Grotesk', system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
@@ -68,6 +72,10 @@
 
     --color-code-bg: #0D0D0D;
     --color-code-text: #FFD700;
+
+    /* Link colors for dark mode */
+    --color-link: #FFD700;          /* Bright gold - readable on dark */
+    --color-link-hover: #FFC107;    /* Slightly different on hover */
 }
 
 /* ----------------------
@@ -110,7 +118,8 @@ img {
     transform: translateX(-50%);
     padding: var(--space-sm) var(--space-md);
     background: var(--color-primary);
-    color: white;
+    color: var(--color-secondary);
+    font-weight: 600;
     text-decoration: none;
     border-radius: var(--radius-md);
     z-index: 1000;
@@ -156,19 +165,23 @@ p {
 }
 
 a {
-    color: var(--color-primary-dark);
+    color: var(--color-link);
     text-decoration: none;
+    transition: color var(--transition-fast);
 }
 
 a:hover {
+    color: var(--color-link-hover);
     text-decoration: underline;
 }
 
 code {
     font-family: var(--font-mono);
     font-size: 0.9em;
-    padding: 0.1em 0.3em;
+    padding: 0.2em 0.4em;
     background: var(--color-bg-alt);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
 }
 
@@ -559,6 +572,7 @@ pre code {
 
 .help-text {
     font-weight: 500;
+    color: var(--color-text);
 }
 
 /* ----------------------
@@ -642,6 +656,7 @@ pre code {
 .tag {
     padding: var(--space-xs) var(--space-sm);
     background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-full);
     font-size: 0.75rem;
     font-weight: 500;
@@ -651,7 +666,11 @@ pre code {
 .module-link {
     display: inline-block;
     font-weight: 600;
-    color: var(--color-primary);
+    color: var(--color-link);
+}
+
+.module-link:hover {
+    color: var(--color-link-hover);
 }
 
 /* ----------------------
@@ -677,6 +696,7 @@ pre code {
     display: block;
     font-weight: 500;
     margin-bottom: var(--space-sm);
+    color: var(--color-text);
 }
 
 .form-group select {
@@ -685,9 +705,16 @@ pre code {
     font-size: 1rem;
     font-family: var(--font-sans);
     background: var(--color-bg);
+    color: var(--color-text);
     border: 2px solid var(--color-border);
     border-radius: var(--radius-md);
     cursor: pointer;
+}
+
+/* Ensure select options are readable */
+.form-group select option {
+    background: var(--color-bg);
+    color: var(--color-text);
 }
 
 .form-group select:focus {
