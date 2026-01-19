@@ -305,8 +305,11 @@ const ContentFilter = {
         // Remove extension for content check
         const baseName = filename.replace(/\.(stl|obj|3mf|gcode)$/i, '');
 
+        // Normalize filename: replace underscores/dashes with spaces for word boundary matching
+        const normalizedName = baseName.replace(/[_\-]/g, ' ');
+
         // Check for weapon-related file names
-        if (this.hasWeaponContent(baseName)) {
+        if (this.hasWeaponContent(normalizedName)) {
             return {
                 valid: false,
                 reason: 'This file name suggests content that is not allowed'
@@ -314,7 +317,7 @@ const ContentFilter = {
         }
 
         // Check for profanity in filename
-        if (this.hasProfanity(baseName)) {
+        if (this.hasProfanity(normalizedName)) {
             return {
                 valid: false,
                 reason: 'Please rename the file with appropriate language'
