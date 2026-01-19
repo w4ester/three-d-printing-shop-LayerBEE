@@ -35,6 +35,13 @@
     font-size: 1.5rem;
 }
 
+.fab-icon-img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 /* Hide FAB when panel is open */
 .tutor-panel[aria-hidden="false"] ~ .tutor-fab {
     opacity: 0;
