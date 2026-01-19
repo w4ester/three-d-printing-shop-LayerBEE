@@ -13,3 +13,6 @@ Thumbs.db
 
 # Playwright MCP screenshots
 .playwright-mcp/
+
+# Build tools (contains explicit word lists for content filter)
+tools/
