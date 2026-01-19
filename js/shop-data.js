@@ -141,7 +141,7 @@ const SHOP_PRODUCTS = [
         difficulty: 'Easy',
         emoji: '🎧',
         imageFolder: 'headphone-hook',
-        hasImages: ['gray', 'white', 'black', 'green', 'rainbow']
+        hasImages: ['gray', 'white', 'black', 'red', 'blue', 'green', 'yellow', 'purple', 'rainbow']
     }
 ];
 
