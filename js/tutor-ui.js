@@ -7,6 +7,21 @@
  * conversion. User input is always escaped via escapeHTML() before display.
  */
 
+// Helper to get correct image path based on page location
+function getImagePath(imageName) {
+    const isInModules = window.location.pathname.includes('/modules/');
+    return isInModules ? `../images/${imageName}` : `images/${imageName}`;
+}
+
+// Create avatar image element for bot messages
+function createAvatarImage() {
+    const img = document.createElement('img');
+    img.src = getImagePath('LayerBEE-chatbot-logo.png');
+    img.alt = '';
+    img.className = 'message-avatar-img';
+    return img;
+}
+
 // ============================================================
 // WEBLLM ENGINE MANAGER
 // ============================================================
@@ -298,9 +313,7 @@ const TutorUI = {
         const messageDiv = document.createElement('div');
         messageDiv.className = 'message bot-message';
 
-        const avatar = document.createElement('span');
-        avatar.className = 'message-avatar';
-        avatar.textContent = '🐝';
+        const avatar = createAvatarImage();
 
         const content = document.createElement('div');
         content.className = 'message-content';
@@ -321,9 +334,7 @@ const TutorUI = {
         const messageDiv = document.createElement('div');
         messageDiv.className = 'message bot-message';
 
-        const avatar = document.createElement('span');
-        avatar.className = 'message-avatar';
-        avatar.textContent = '🐝';
+        const avatar = createAvatarImage();
 
         const content = document.createElement('div');
         content.className = 'message-content';
@@ -342,9 +353,7 @@ const TutorUI = {
         const typingDiv = document.createElement('div');
         typingDiv.className = 'message bot-message typing-message';
 
-        const avatar = document.createElement('span');
-        avatar.className = 'message-avatar';
-        avatar.textContent = '🐝';
+        const avatar = createAvatarImage();
 
         const content = document.createElement('div');
         content.className = 'message-content';

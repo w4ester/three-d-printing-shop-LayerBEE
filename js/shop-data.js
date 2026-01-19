@@ -54,7 +54,7 @@ const SHOP_PRODUCTS = [
         difficulty: 'Easy',
         emoji: '📱',
         imageFolder: 'phone-stand',
-        hasImages: ['gray', 'white', 'black'], // Colors with real images
+        hasImages: ['gray', 'white', 'black', 'red', 'blue', 'green', 'yellow', 'purple', 'rainbow'], // All colors
         popular: true
     },
     {
@@ -67,7 +67,7 @@ const SHOP_PRODUCTS = [
         difficulty: 'Easy',
         emoji: '✏️',
         imageFolder: 'pencil-holder',
-        hasImages: []
+        hasImages: ['gray', 'white', 'black', 'red', 'blue', 'green', 'yellow', 'purple', 'rainbow']
     },
     {
         id: 'cable-organizer',
@@ -79,7 +79,7 @@ const SHOP_PRODUCTS = [
         difficulty: 'Easy',
         emoji: '🔌',
         imageFolder: 'cable-organizer',
-        hasImages: []
+        hasImages: ['gray', 'white', 'black', 'red', 'blue', 'green', 'yellow', 'purple', 'rainbow']
     },
     {
         id: 'custom-keychain',
@@ -91,7 +91,7 @@ const SHOP_PRODUCTS = [
         difficulty: 'Easy',
         emoji: '🔑',
         imageFolder: 'keychain',
-        hasImages: [],
+        hasImages: ['gray', 'white', 'black', 'red', 'blue', 'green', 'yellow', 'purple', 'rainbow'],
         popular: true
     },
     {
@@ -104,7 +104,7 @@ const SHOP_PRODUCTS = [
         difficulty: 'Easy',
         emoji: '📖',
         imageFolder: 'bookmark',
-        hasImages: []
+        hasImages: ['gray', 'white', 'black', 'red', 'blue', 'green', 'yellow', 'purple', 'rainbow']
     },
     {
         id: 'mini-planter',
@@ -116,7 +116,7 @@ const SHOP_PRODUCTS = [
         difficulty: 'Medium',
         emoji: '🌱',
         imageFolder: 'planter',
-        hasImages: []
+        hasImages: ['gray', 'white', 'black', 'red', 'blue', 'green', 'yellow', 'purple', 'rainbow']
     },
     {
         id: 'fidget-cube',
@@ -128,7 +128,7 @@ const SHOP_PRODUCTS = [
         difficulty: 'Medium',
         emoji: '🎲',
         imageFolder: 'fidget-cube',
-        hasImages: [],
+        hasImages: ['gray', 'white', 'black', 'red', 'blue', 'green', 'yellow', 'purple', 'rainbow'],
         popular: true
     },
     {
@@ -141,7 +141,7 @@ const SHOP_PRODUCTS = [
         difficulty: 'Easy',
         emoji: '🎧',
         imageFolder: 'headphone-hook',
-        hasImages: []
+        hasImages: ['gray', 'white', 'black', 'green', 'rainbow']
     }
 ];
 
