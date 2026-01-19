@@ -233,5 +233,133 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('🐝 LayerBEE app initialized!');
 });
 
+// ============================================================
+// CART MANAGEMENT
+// ============================================================
+
+const CartManager = {
+    STORAGE_KEY: 'layerbee_cart',
+    ORDERS_KEY: 'layerbee_orders',
+
+    getCart() {
+        const saved = localStorage.getItem(this.STORAGE_KEY);
+        return saved ? JSON.parse(saved) : [];
+    },
+
+    saveCart(cart) {
+        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(cart));
+        this.updateDisplay();
+    },
+
+    addItem(product, color, quantity = 1) {
+        const cart = this.getCart();
+
+        // Check if item with same product and color exists
+        const existingIndex = cart.findIndex(
+            item => item.productId === product.id && item.color === color.name
+        );
+
+        if (existingIndex >= 0) {
+            cart[existingIndex].quantity += quantity;
+        } else {
+            cart.push({
+                productId: product.id,
+                name: product.name,
+                basePrice: product.price,
+                color: color.name,
+                colorUpcharge: color.upcharge,
+                quantity: quantity,
+                addedAt: Date.now()
+            });
+        }
+
+        this.saveCart(cart);
+        return cart;
+    },
+
+    removeItem(index) {
+        const cart = this.getCart();
+        cart.splice(index, 1);
+        this.saveCart(cart);
+        return cart;
+    },
+
+    updateItemQuantity(index, quantity) {
+        const cart = this.getCart();
+        if (quantity <= 0) {
+            return this.removeItem(index);
+        }
+        cart[index].quantity = quantity;
+        this.saveCart(cart);
+        return cart;
+    },
+
+    clearCart() {
+        this.saveCart([]);
+    },
+
+    getItemTotal(item) {
+        return (item.basePrice + item.colorUpcharge) * item.quantity;
+    },
+
+    getTotal() {
+        const cart = this.getCart();
+        return cart.reduce((sum, item) => sum + this.getItemTotal(item), 0);
+    },
+
+    getItemCount() {
+        const cart = this.getCart();
+        return cart.reduce((sum, item) => sum + item.quantity, 0);
+    },
+
+    updateDisplay() {
+        // Update cart count badges
+        const countBadges = document.querySelectorAll('.cart-count');
+        const count = this.getItemCount();
+
+        countBadges.forEach(badge => {
+            badge.textContent = count;
+            badge.style.display = count > 0 ? 'flex' : 'none';
+        });
+
+        // Dispatch event for shop page to update
+        window.dispatchEvent(new CustomEvent('cartUpdated', {
+            detail: { cart: this.getCart(), count, total: this.getTotal() }
+        }));
+    },
+
+    submitOrder(customerInfo) {
+        const cart = this.getCart();
+        if (cart.length === 0) return null;
+
+        const order = {
+            id: 'ORD-' + Date.now().toString(36).toUpperCase(),
+            items: cart,
+            total: this.getTotal(),
+            customerName: customerInfo.name,
+            customerNote: customerInfo.note || '',
+            status: 'pending_review',
+            createdAt: Date.now()
+        };
+
+        const orders = this.getOrders();
+        orders.push(order);
+        localStorage.setItem(this.ORDERS_KEY, JSON.stringify(orders));
+
+        this.clearCart();
+        return order;
+    },
+
+    getOrders() {
+        const saved = localStorage.getItem(this.ORDERS_KEY);
+        return saved ? JSON.parse(saved) : [];
+    },
+
+    getPendingOrders() {
+        return this.getOrders().filter(o => o.status === 'pending_review');
+    }
+};
+
 // Export for use in other modules
 window.ProgressTracker = ProgressTracker;
+window.CartManager = CartManager;

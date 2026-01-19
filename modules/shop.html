@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Shop | LayerBEE</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/tutor.css">
+    <link rel="stylesheet" href="../css/shop.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="../images/LayerBEE-chatbot-logo.png" alt="" class="logo-img" aria-hidden="true">
+                <span class="logo-text">LayerBEE</span>
+            </a>
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#modules" class="nav-link">Learn</a></li>
+                    <li><a href="troubleshoot.html" class="nav-link">Fix Problems</a></li>
+                    <li><a href="business.html" class="nav-link">Start Selling</a></li>
+                    <li><a href="shop.html" class="nav-link active">Shop</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon-light">☀️</span>
+                    <span class="theme-icon-dark">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Shop Header -->
+        <section class="shop-header">
+            <h1>🛒 <span class="highlight">LayerBEE</span> Print Shop</h1>
+            <p class="shop-subtitle">Browse our 3D printed products! Pick your colors, add to cart, and submit for parent review.</p>
+        </section>
+
+        <!-- Category Filters -->
+        <nav class="category-filters" id="category-filters" aria-label="Product categories">
+            <!-- Rendered by JavaScript -->
+        </nav>
+
+        <!-- Products Grid -->
+        <section class="products-section">
+            <div class="products-grid" id="products-grid">
+                <!-- Rendered by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Panel (slide-in from left) -->
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <div id="cart-panel" class="cart-panel" aria-hidden="true" role="dialog" aria-label="Shopping cart">
+        <div class="cart-header">
+            <h2>🛒 Your Cart</h2>
+            <button id="close-cart" class="cart-close" aria-label="Close cart">×</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Rendered by JavaScript -->
+        </div>
+        <div class="cart-footer" id="cart-footer" style="display: none;">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="cart-total-price" id="cart-total">$0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkout-btn">Submit for Parent Review</button>
+        </div>
+    </div>
+
+    <!-- Cart FAB (bottom-left) -->
+    <button id="cart-fab" class="cart-fab" aria-label="Open shopping cart">
+        <span class="cart-fab-icon">🛒</span>
+        <span class="cart-fab-text">Cart</span>
+        <span class="cart-count">0</span>
+    </button>
+
+    <!-- Tutor Panel (same as other pages) -->
+    <div id="tutor-panel" class="tutor-panel" aria-hidden="true">
+        <div class="tutor-header">
+            <h2>🐝 LayerBEE</h2>
+            <div class="tutor-status" id="tutor-status">
+                <span class="status-dot"></span>
+                <span class="status-text">Loading...</span>
+            </div>
+            <button id="close-tutor" class="tutor-close" aria-label="Close tutor">×</button>
+        </div>
+        <div class="tutor-messages" id="tutor-messages" role="log" aria-live="polite">
+            <div class="message bot-message">
+                <span class="message-avatar">🐝</span>
+                <div class="message-content">
+                    <p><strong>Welcome to the Print Shop!</strong></p>
+                    <p>Need help choosing a product? Ask me anything!</p>
+                </div>
+            </div>
+        </div>
+        <div class="tutor-mode-selector">
+            <button class="mode-btn active" data-mode="learn">📚 Learn</button>
+            <button class="mode-btn" data-mode="troubleshoot">🔧 Fix</button>
+            <button class="mode-btn" data-mode="quiz">❓ Quiz</button>
+        </div>
+        <div class="tutor-input-area">
+            <div id="model-loading" class="model-loading">
+                <div class="loading-spinner"></div>
+                <span id="loading-text">Initializing LayerBEE...</span>
+                <div class="loading-progress">
+                    <div class="loading-bar" id="loading-bar"></div>
+                </div>
+            </div>
+            <form id="tutor-form" class="tutor-form">
+                <label for="tutor-input" class="visually-hidden">Ask a question</label>
+                <input type="text" id="tutor-input" placeholder="Ask about our products..." autocomplete="off" disabled>
+                <button type="submit" id="tutor-submit" disabled aria-label="Send">→</button>
+            </form>
+        </div>
+    </div>
+
+    <button id="tutor-fab" class="tutor-fab" aria-label="Open LayerBEE tutor">
+        <img src="../images/LayerBEE-chatbot-logo.png" alt="" class="fab-icon-img" aria-hidden="true">
+        <span class="fab-text">Ask LayerBEE</span>
+    </button>
+
+    <footer class="site-footer">
+        <p>Built for young makers with the <strong>Producer Mindset</strong> 🐝</p>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/shop-data.js"></script>
+    <script src="../js/shop.js"></script>
+    <script src="../js/tutor-flow.js"></script>
+    <script src="../js/tutor-ui.js"></script>
+</body>
+</html>
