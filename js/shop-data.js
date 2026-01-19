@@ -22,21 +22,21 @@ const SHOP_CATEGORIES = [
 
 const SHOP_COLORS = [
     // Free colors
-    { name: 'Gray', hex: '#6B7280', upcharge: 0 },
-    { name: 'White', hex: '#F3F4F6', upcharge: 0 },
-    { name: 'Black', hex: '#1F2937', upcharge: 0 },
+    { name: 'Gray', hex: '#6B7280', upcharge: 0, imageKey: 'gray' },
+    { name: 'White', hex: '#F3F4F6', upcharge: 0, imageKey: 'white' },
+    { name: 'Black', hex: '#1F2937', upcharge: 0, imageKey: 'black' },
 
     // +$0.50 colors
-    { name: 'Red', hex: '#EF4444', upcharge: 0.50 },
-    { name: 'Blue', hex: '#3B82F6', upcharge: 0.50 },
-    { name: 'Green', hex: '#22C55E', upcharge: 0.50 },
+    { name: 'Red', hex: '#EF4444', upcharge: 0.50, imageKey: 'red' },
+    { name: 'Blue', hex: '#3B82F6', upcharge: 0.50, imageKey: 'blue' },
+    { name: 'Green', hex: '#22C55E', upcharge: 0.50, imageKey: 'green' },
 
     // +$1.00 colors
-    { name: 'Yellow', hex: '#F5C518', upcharge: 1.00, featured: true }, // LayerBEE Yellow!
-    { name: 'Purple', hex: '#8B5CF6', upcharge: 1.00 },
+    { name: 'Yellow', hex: '#F5C518', upcharge: 1.00, featured: true, imageKey: 'yellow' }, // LayerBEE Yellow!
+    { name: 'Purple', hex: '#8B5CF6', upcharge: 1.00, imageKey: 'purple' },
 
     // +$1.50 premium
-    { name: 'Rainbow Silk', hex: 'linear-gradient(135deg, #EF4444, #F59E0B, #22C55E, #3B82F6, #8B5CF6)', upcharge: 1.50, premium: true }
+    { name: 'Rainbow Silk', hex: 'linear-gradient(135deg, #EF4444, #F59E0B, #22C55E, #3B82F6, #8B5CF6)', upcharge: 1.50, premium: true, imageKey: 'rainbow' }
 ];
 
 // ============================================================
@@ -52,7 +52,9 @@ const SHOP_PRODUCTS = [
         category: 'tech',
         printTime: '45 min',
         difficulty: 'Easy',
-        image: '📱',
+        emoji: '📱',
+        imageFolder: 'phone-stand',
+        hasImages: ['gray', 'white', 'black'], // Colors with real images
         popular: true
     },
     {
@@ -63,7 +65,9 @@ const SHOP_PRODUCTS = [
         category: 'school',
         printTime: '1 hr',
         difficulty: 'Easy',
-        image: '✏️'
+        emoji: '✏️',
+        imageFolder: 'pencil-holder',
+        hasImages: []
     },
     {
         id: 'cable-organizer',
@@ -73,7 +77,9 @@ const SHOP_PRODUCTS = [
         category: 'tech',
         printTime: '30 min',
         difficulty: 'Easy',
-        image: '🔌'
+        emoji: '🔌',
+        imageFolder: 'cable-organizer',
+        hasImages: []
     },
     {
         id: 'custom-keychain',
@@ -83,7 +89,9 @@ const SHOP_PRODUCTS = [
         category: 'accessories',
         printTime: '15 min',
         difficulty: 'Easy',
-        image: '🔑',
+        emoji: '🔑',
+        imageFolder: 'keychain',
+        hasImages: [],
         popular: true
     },
     {
@@ -94,7 +102,9 @@ const SHOP_PRODUCTS = [
         category: 'school',
         printTime: '20 min',
         difficulty: 'Easy',
-        image: '📖'
+        emoji: '📖',
+        imageFolder: 'bookmark',
+        hasImages: []
     },
     {
         id: 'mini-planter',
@@ -104,7 +114,9 @@ const SHOP_PRODUCTS = [
         category: 'home',
         printTime: '1.5 hr',
         difficulty: 'Medium',
-        image: '🌱'
+        emoji: '🌱',
+        imageFolder: 'planter',
+        hasImages: []
     },
     {
         id: 'fidget-cube',
@@ -114,7 +126,9 @@ const SHOP_PRODUCTS = [
         category: 'toys',
         printTime: '2 hr',
         difficulty: 'Medium',
-        image: '🎲',
+        emoji: '🎲',
+        imageFolder: 'fidget-cube',
+        hasImages: [],
         popular: true
     },
     {
@@ -125,7 +139,9 @@ const SHOP_PRODUCTS = [
         category: 'tech',
         printTime: '40 min',
         difficulty: 'Easy',
-        image: '🎧'
+        emoji: '🎧',
+        imageFolder: 'headphone-hook',
+        hasImages: []
     }
 ];
 
@@ -170,6 +186,24 @@ const ShopData = {
 
     calculateItemPrice(product, color) {
         return product.price + color.upcharge;
+    },
+
+    /**
+     * Get product image path for a specific color
+     * Returns real image if available, or null if only emoji should be used
+     */
+    getProductImagePath(product, colorKey) {
+        if (product.hasImages && product.hasImages.includes(colorKey)) {
+            return `../images/products/${product.imageFolder}/${colorKey}.png`;
+        }
+        return null;
+    },
+
+    /**
+     * Check if product has a real image for given color
+     */
+    hasProductImage(product, colorKey) {
+        return product.hasImages && product.hasImages.includes(colorKey);
     }
 };
 

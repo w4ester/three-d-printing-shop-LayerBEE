@@ -97,6 +97,7 @@ const ShopUI = {
     createProductCard(product) {
         const isExpanded = this.expandedProductId === product.id;
         const options = this.getProductOptions(product.id);
+        const selectedColorKey = options.color.imageKey;
 
         const article = document.createElement('article');
         article.className = 'product-card' + (isExpanded ? ' expanded' : '');
@@ -109,14 +110,28 @@ const ShopUI = {
             this.toggleProductExpansion(product.id);
         });
 
-        // Header with icon and badges
+        // Header with icon/image and badges
         const header = document.createElement('div');
         header.className = 'product-header';
 
-        const icon = document.createElement('span');
-        icon.className = 'product-icon';
-        icon.textContent = product.image;
-        header.appendChild(icon);
+        // Check if product has real image for selected color
+        const imagePath = ShopData.getProductImagePath(product, selectedColorKey);
+
+        if (imagePath) {
+            // Use real product image
+            const img = document.createElement('img');
+            img.className = 'product-image';
+            img.src = imagePath;
+            img.alt = product.name + ' in ' + options.color.name;
+            img.loading = 'lazy';
+            header.appendChild(img);
+        } else {
+            // Fall back to emoji
+            const icon = document.createElement('span');
+            icon.className = 'product-icon';
+            icon.textContent = product.emoji;
+            header.appendChild(icon);
+        }
 
         if (product.popular) {
             const badges = document.createElement('div');
@@ -499,16 +514,27 @@ const ShopUI = {
         const product = ShopData.getProductById(item.productId);
         const color = ShopData.getColors().find(c => c.name === item.color);
         const itemTotal = CartManager.getItemTotal(item);
+        const colorKey = color ? color.imageKey : 'gray';
 
         const div = document.createElement('div');
         div.className = 'cart-item';
         div.dataset.index = index;
 
-        // Icon
-        const iconSpan = document.createElement('span');
-        iconSpan.className = 'cart-item-icon';
-        iconSpan.textContent = product ? product.image : '📦';
-        div.appendChild(iconSpan);
+        // Icon or Image
+        const imagePath = product ? ShopData.getProductImagePath(product, colorKey) : null;
+
+        if (imagePath) {
+            const img = document.createElement('img');
+            img.className = 'cart-item-image';
+            img.src = imagePath;
+            img.alt = item.name + ' in ' + item.color;
+            div.appendChild(img);
+        } else {
+            const iconSpan = document.createElement('span');
+            iconSpan.className = 'cart-item-icon';
+            iconSpan.textContent = product ? product.emoji : '📦';
+            div.appendChild(iconSpan);
+        }
 
         // Details
         const details = document.createElement('div');

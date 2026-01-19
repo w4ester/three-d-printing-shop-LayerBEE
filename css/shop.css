@@ -122,6 +122,15 @@
     margin-bottom: var(--space-sm);
 }
 
+.product-image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: var(--radius-md);
+    object-fit: cover;
+    margin-bottom: var(--space-sm);
+}
+
 .product-badges {
     display: flex;
     gap: var(--space-xs);
@@ -515,6 +524,13 @@
 
 .cart-item-icon {
     font-size: 2rem;
+}
+
+.cart-item-image {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
 }
 
 .cart-item-details {
