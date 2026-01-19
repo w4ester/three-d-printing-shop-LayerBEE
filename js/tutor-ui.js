@@ -249,6 +249,18 @@ const TutorUI = {
         // Clear input
         this.input.value = '';
 
+        // Content filter check (before showing or processing)
+        if (window.ContentFilter) {
+            const filterResult = window.ContentFilter.validateChatMessage(question);
+            if (!filterResult.valid) {
+                // Show a generic user message (don't display inappropriate content)
+                this.addUserMessage('[Message filtered]');
+                // Show friendly redirect
+                this.addBotMessage(filterResult.redirect || window.ContentFilter.getRedirectMessage());
+                return;
+            }
+        }
+
         // Add user message (escaped)
         this.addUserMessage(question);
 
