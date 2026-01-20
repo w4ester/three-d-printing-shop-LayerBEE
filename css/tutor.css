@@ -11,33 +11,33 @@
     right: var(--space-lg);
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
-    padding: var(--space-md) var(--space-lg);
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
     background: var(--color-primary);
     color: var(--color-secondary);
     border: none;
     border-radius: var(--radius-full);
     font-family: var(--font-sans);
-    font-size: 1rem;
+    font-size: 0.875rem;
     font-weight: 600;
     cursor: pointer;
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-md);
     transition: all var(--transition-fast);
     z-index: 90;
 }
 
 .tutor-fab:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 30px rgba(245, 158, 11, 0.4);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
 }
 
 .fab-icon {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 .fab-icon-img {
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -335,6 +335,7 @@
 .tutor-form input:focus {
     outline: none;
     border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(245, 197, 24, 0.3);
 }
 
 .tutor-form input:disabled {
