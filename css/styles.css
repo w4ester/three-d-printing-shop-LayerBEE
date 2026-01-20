@@ -987,3 +987,15 @@ pre code {
         font-size: 2rem;
     }
 }
+
+
+/* ----------------------
+   INLINE BEE LOGO
+   ---------------------- */
+.inline-bee {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    vertical-align: middle;
+    margin-right: 0.25em;
+}

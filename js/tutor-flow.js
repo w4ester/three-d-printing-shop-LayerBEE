@@ -262,7 +262,7 @@ MODE: LEARN
 - Give practical tips they can try`;
         }
 
-        const systemPrompt = `You are LayerBEE, a friendly 3D printing tutor for young makers! 🐝
+        const systemPrompt = `You are LayerBEE, a friendly 3D printing tutor for young makers!
 
 YOUR PERSONALITY:
 - Enthusiastic about 3D printing and making
@@ -410,25 +410,25 @@ class ErrorHandlerNode extends Node {
         // Keyword-based fallback answers
         const fallbacks = {
             // Troubleshooting
-            'string': '🐝 <strong>Stringing?</strong> Try these fixes:<ul><li>Lower your temperature by 5-10°C</li><li>Increase retraction distance (try 6mm for Bowden, 2mm for direct drive)</li><li>Enable "Combing" or "Avoid crossing perimeters" in your slicer</li></ul>',
+            'string': '<strong>Stringing?</strong> Try these fixes:<ul><li>Lower your temperature by 5-10°C</li><li>Increase retraction distance (try 6mm for Bowden, 2mm for direct drive)</li><li>Enable "Combing" or "Avoid crossing perimeters" in your slicer</li></ul>',
 
-            'warp': '🐝 <strong>Warping?</strong> Here\'s what helps:<ul><li>Make sure your bed is level and clean</li><li>Use a brim or raft for better adhesion</li><li>Try a heated bed (60°C for PLA, 70°C for PETG)</li><li>Reduce cooling fan for the first few layers</li></ul>',
+            'warp': '<strong>Warping?</strong> Here\'s what helps:<ul><li>Make sure your bed is level and clean</li><li>Use a brim or raft for better adhesion</li><li>Try a heated bed (60°C for PLA, 70°C for PETG)</li><li>Reduce cooling fan for the first few layers</li></ul>',
 
-            'adhesion': '🐝 <strong>First layer not sticking?</strong> Try:<ul><li>Level your bed (paper test: slight drag)</li><li>Clean the bed with isopropyl alcohol</li><li>Slow down first layer (try 20mm/s)</li><li>Use glue stick or hairspray if needed</li></ul>',
+            'adhesion': '<strong>First layer not sticking?</strong> Try:<ul><li>Level your bed (paper test: slight drag)</li><li>Clean the bed with isopropyl alcohol</li><li>Slow down first layer (try 20mm/s)</li><li>Use glue stick or hairspray if needed</li></ul>',
 
-            'clog': '🐝 <strong>Clogged nozzle?</strong> Here\'s how to fix it:<ul><li>Heat up the nozzle to printing temp</li><li>Try a cold pull: heat to 200°C, cool to 90°C, pull filament out</li><li>Use a needle to clear the nozzle (be careful, it\'s hot!)</li><li>As last resort: replace the nozzle</li></ul>',
+            'clog': '<strong>Clogged nozzle?</strong> Here\'s how to fix it:<ul><li>Heat up the nozzle to printing temp</li><li>Try a cold pull: heat to 200°C, cool to 90°C, pull filament out</li><li>Use a needle to clear the nozzle (be careful, it\'s hot!)</li><li>As last resort: replace the nozzle</li></ul>',
 
             // Basics
-            'pla': '🐝 <strong>PLA</strong> is perfect for beginners!<ul><li>Print temp: 190-220°C</li><li>Bed temp: 50-60°C (or no heat)</li><li>Easy to print, biodegradable</li><li>Great for toys, decorations, prototypes</li></ul>',
+            'pla': '<strong>PLA</strong> is perfect for beginners!<ul><li>Print temp: 190-220°C</li><li>Bed temp: 50-60°C (or no heat)</li><li>Easy to print, biodegradable</li><li>Great for toys, decorations, prototypes</li></ul>',
 
-            'petg': '🐝 <strong>PETG</strong> is stronger than PLA:<ul><li>Print temp: 220-250°C</li><li>Bed temp: 70-80°C</li><li>Food-safe (after sealing)</li><li>More flexible, heat resistant</li></ul>',
+            'petg': '<strong>PETG</strong> is stronger than PLA:<ul><li>Print temp: 220-250°C</li><li>Bed temp: 70-80°C</li><li>Food-safe (after sealing)</li><li>More flexible, heat resistant</li></ul>',
 
-            'level': '🐝 <strong>Bed leveling</strong> is super important!<ul><li>Use the paper test: adjust until paper has slight drag</li><li>Check all four corners</li><li>Re-level when you move the printer</li><li>Many printers have auto-level - use it!</li></ul>',
+            'level': '<strong>Bed leveling</strong> is super important!<ul><li>Use the paper test: adjust until paper has slight drag</li><li>Check all four corners</li><li>Re-level when you move the printer</li><li>Many printers have auto-level - use it!</li></ul>',
 
             // Business
-            'sell': '🐝 <strong>Want to sell prints?</strong> Great idea!<ul><li>Start with friends and family</li><li>Make sure to involve a parent for money stuff</li><li>Price = filament cost + time + a little profit</li><li>Take good photos in natural light</li></ul>',
+            'sell': '<strong>Want to sell prints?</strong> Great idea!<ul><li>Start with friends and family</li><li>Make sure to involve a parent for money stuff</li><li>Price = filament cost + time + a little profit</li><li>Take good photos in natural light</li></ul>',
 
-            'price': '🐝 <strong>Pricing your prints:</strong><ul><li>Filament: about $0.05 per gram (check your slicer for weight)</li><li>Add your time: maybe $5-10 per hour of design</li><li>Add a profit margin: 20-50% extra</li><li>Check what others charge for similar items!</li></ul>'
+            'price': '<strong>Pricing your prints:</strong><ul><li>Filament: about $0.05 per gram (check your slicer for weight)</li><li>Add your time: maybe $5-10 per hour of design</li><li>Add a profit margin: 20-50% extra</li><li>Check what others charge for similar items!</li></ul>'
         };
 
         // Search for matching keywords
@@ -441,7 +441,7 @@ class ErrorHandlerNode extends Node {
 
         // Generic error message
         return {
-            html: `<p>🐝 Buzz... I hit a snag! (${error})</p>
+            html: `<p>Buzz... I hit a snag! (${error})</p>
                    <p>Try refreshing the page, or ask your question a different way.</p>
                    <p><strong>Quick tips while I warm up:</strong></p>
                    <ul>

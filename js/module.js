@@ -81,7 +81,7 @@ const QuizHandler = {
         if (percentage === 100) {
             message = '🎉 Perfect score! You really know your 3D printing basics!';
         } else if (percentage >= 75) {
-            message = '🐝 Great job! You\'ve got a solid understanding!';
+            message = 'Great job! You\'ve got a solid understanding!';
         } else if (percentage >= 50) {
             message = '👍 Good effort! Review the sections above and try again.';
         } else {
@@ -186,7 +186,7 @@ const ModuleCompletion = {
     markComplete(moduleId) {
         if (window.ProgressTracker) {
             window.ProgressTracker.markModuleComplete(moduleId);
-            console.log(`🐝 Module "${moduleId}" marked as complete!`);
+            console.log(`[LayerBEE] Module "${moduleId}" marked as complete!`);
         }
     }
 };
@@ -200,5 +200,5 @@ document.addEventListener('DOMContentLoaded', () => {
     AskTutorButtons.init();
     ModuleCompletion.init();
 
-    console.log('🐝 Module page initialized!');
+    console.log('[LayerBEE] Module page initialized!');
 });

@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
     SetupForm.init();
     QuickHelp.init();
 
-    console.log('🐝 LayerBEE app initialized!');
+    console.log('[LayerBEE] App initialized!');
 });
 
 // ============================================================

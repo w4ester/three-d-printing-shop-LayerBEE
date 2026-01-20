@@ -57,7 +57,7 @@ const TutorLLM = {
             this.hideLoading();
             this.enableInput();
 
-            console.log('🐝 LayerBEE AI engine ready!');
+            console.log('[LayerBEE] AI engine ready!');
 
         } catch (error) {
             console.error('Failed to load WebLLM:', error);
@@ -162,7 +162,7 @@ const TutorUI = {
         if (!this.panel) return;
 
         this.setupEventListeners();
-        console.log('🐝 LayerBEE UI initialized!');
+        console.log('[LayerBEE] UI initialized!');
     },
 
     setupEventListeners() {
@@ -285,7 +285,7 @@ const TutorUI = {
         } catch (error) {
             console.error('Error getting response:', error);
             this.hideTyping();
-            this.addBotMessage('🐝 Oops! Something went wrong: ' + error.message + ' Try asking again!');
+            this.addBotMessage('Oops! Something went wrong: ' + error.message + ' Try asking again!');
         }
     },
 
