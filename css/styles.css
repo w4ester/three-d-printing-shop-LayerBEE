@@ -938,6 +938,22 @@ pre code {
     margin-top: var(--space-sm);
 }
 
+.footer-link {
+    margin-top: var(--space-md);
+}
+
+.footer-link a {
+    color: var(--color-link);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.footer-link a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+
 /* ----------------------
    RESPONSIVE
    ---------------------- */

@@ -1,0 +1,622 @@
+/* ============================================================
+   LayerBEE - School Pitch Page Styles
+   Professional yet student-friendly pitch to administrators
+   ============================================================ */
+
+/* ----------------------
+   PAGE LAYOUT
+   ---------------------- */
+.school-pitch-page {
+    background: var(--color-bg);
+}
+
+.pitch-header {
+    padding: var(--space-md) var(--space-xl);
+    background: var(--color-bg);
+    border-bottom: 2px solid var(--color-primary);
+}
+
+.pitch-header .logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+.pitch-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+/* ----------------------
+   HERO SECTION
+   ---------------------- */
+.pitch-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+    padding: var(--space-2xl) var(--space-xl);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pitch-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+}
+
+.badge-bee {
+    width: 24px;
+    height: 24px;
+}
+
+.pitch-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: var(--space-lg);
+}
+
+.pitch-hero .highlight {
+    color: var(--color-primary-dark);
+    background: linear-gradient(180deg, transparent 60%, rgba(245, 197, 24, 0.3) 60%);
+}
+
+.pitch-tagline {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+.pitch-hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pitch-hero-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ----------------------
+   SECTIONS
+   ---------------------- */
+.pitch-section {
+    padding: var(--space-2xl) var(--space-xl);
+}
+
+.pitch-section:nth-child(even) {
+    background: var(--color-bg-alt);
+}
+
+.pitch-section h2 {
+    font-size: 2rem;
+    margin-bottom: var(--space-xl);
+    text-align: center;
+}
+
+/* ----------------------
+   THE ASK SECTION
+   ---------------------- */
+.ask-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ask-intro {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
+}
+
+.ask-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+}
+
+/* ----------------------
+   ALIGNMENT CARDS
+   ---------------------- */
+.alignment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-lg);
+}
+
+.alignment-card {
+    background: var(--color-bg);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    border: 2px solid transparent;
+    transition: var(--transition-normal);
+}
+
+.alignment-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+}
+
+.alignment-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-md);
+}
+
+.alignment-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-sm);
+}
+
+.alignment-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+}
+
+/* ----------------------
+   CURRICULUM MODULES
+   ---------------------- */
+.curriculum-modules {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.curriculum-module {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    background: var(--color-bg);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--color-border);
+    transition: var(--transition-normal);
+}
+
+.curriculum-module:hover {
+    border-left-color: var(--color-primary);
+}
+
+.curriculum-module.featured {
+    border-left-color: var(--color-primary);
+    background: linear-gradient(90deg, rgba(245, 197, 24, 0.1) 0%, var(--color-bg) 100%);
+}
+
+.module-num {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    min-width: 50px;
+}
+
+.module-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-xs);
+}
+
+.module-info p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+/* ----------------------
+   MARKETPLACE SECTION
+   ---------------------- */
+.pitch-marketplace {
+    background: linear-gradient(135deg, var(--color-bg) 0%, rgba(245, 197, 24, 0.1) 100%);
+}
+
+.marketplace-content {
+    display: grid;
+    gap: var(--space-xl);
+}
+
+.marketplace-intro {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--space-xl);
+}
+
+.marketplace-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+}
+
+.marketplace-feature {
+    display: flex;
+    gap: var(--space-md);
+    background: var(--color-bg);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--color-primary);
+}
+
+.marketplace-feature .feature-icon {
+    font-size: 1.75rem;
+    flex-shrink: 0;
+}
+
+.marketplace-feature h4 {
+    font-size: 1rem;
+    margin-bottom: var(--space-xs);
+    color: var(--color-text);
+}
+
+.marketplace-feature p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.marketplace-callout {
+    margin-top: var(--space-lg);
+}
+
+.callout-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.callout-emoji {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.callout-inner p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ----------------------
+   SAFETY SECTION
+   ---------------------- */
+.safety-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+}
+
+.safety-item {
+    display: flex;
+    gap: var(--space-md);
+    background: var(--color-bg);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.safety-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.safety-content h3 {
+    font-size: 1rem;
+    margin-bottom: var(--space-xs);
+}
+
+.safety-content p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+}
+
+/* ----------------------
+   NEEDS SECTION
+   ---------------------- */
+.needs-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.need-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    background: var(--color-bg);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.need-item.optional {
+    opacity: 0.8;
+    border: 2px dashed var(--color-border);
+    box-shadow: none;
+}
+
+.need-check {
+    font-size: 1.5rem;
+    color: var(--color-success);
+    font-weight: 700;
+    min-width: 40px;
+    text-align: center;
+}
+
+.need-item.optional .need-check {
+    color: var(--color-text-muted);
+}
+
+.need-content h3 {
+    font-size: 1rem;
+    margin-bottom: var(--space-xs);
+}
+
+.need-content p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+}
+
+/* ----------------------
+   CTA SECTION
+   ---------------------- */
+.pitch-cta {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    color: var(--color-secondary);
+}
+
+.cta-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta-bee {
+    width: 80px;
+    height: 80px;
+    margin-bottom: var(--space-lg);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.pitch-cta h2 {
+    color: var(--color-secondary);
+    margin-bottom: var(--space-md);
+}
+
+.pitch-cta p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-xl);
+    color: var(--color-secondary);
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-xl);
+}
+
+.pitch-cta .btn-primary {
+    background: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+.pitch-cta .btn-primary:hover {
+    background: var(--color-bg);
+}
+
+.pitch-cta .btn-secondary {
+    background: transparent;
+    border: 2px solid var(--color-secondary);
+    color: var(--color-secondary);
+}
+
+.pitch-cta .btn-secondary:hover {
+    background: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+.cta-contact {
+    padding-top: var(--space-lg);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cta-contact p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* ----------------------
+   QUOTE SECTION
+   ---------------------- */
+.pitch-quote {
+    background: var(--color-secondary);
+    color: var(--color-bg);
+}
+
+.student-quote {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    font-style: italic;
+}
+
+.student-quote p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: var(--space-lg);
+    color: var(--color-bg);
+}
+
+.student-quote cite {
+    font-style: normal;
+    font-size: 1rem;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* ----------------------
+   FOOTER
+   ---------------------- */
+.pitch-footer {
+    padding: var(--space-xl);
+    text-align: center;
+    background: var(--color-bg-alt);
+    border-top: 2px solid var(--color-primary);
+}
+
+.pitch-footer p {
+    margin-bottom: var(--space-sm);
+}
+
+.footer-note {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+}
+
+/* ----------------------
+   RESPONSIVE
+   ---------------------- */
+@media (max-width: 768px) {
+    .pitch-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .pitch-hero-visual {
+        order: -1;
+    }
+
+    .pitch-hero-img {
+        max-width: 300px;
+    }
+
+    .pitch-section {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .pitch-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .alignment-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .curriculum-module {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .safety-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .safety-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .need-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .need-check {
+        min-width: auto;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .student-quote p {
+        font-size: 1.2rem;
+    }
+}
+
+/* ----------------------
+   PRINT STYLES
+   ---------------------- */
+@media print {
+    .pitch-header,
+    .pitch-cta .btn,
+    .cta-buttons {
+        display: none;
+    }
+
+    .pitch-section {
+        page-break-inside: avoid;
+        padding: 1rem;
+    }
+
+    .pitch-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .pitch-hero-visual {
+        display: none;
+    }
+
+    body {
+        font-size: 12pt;
+        color: black;
+        background: white;
+    }
+
+    .pitch-cta {
+        background: #f0f0f0;
+        color: black;
+    }
+
+    .pitch-cta h2,
+    .pitch-cta p {
+        color: black;
+    }
+
+    .pitch-quote {
+        background: #f0f0f0;
+        color: black;
+    }
+
+    .student-quote cite {
+        color: #666;
+    }
+}
