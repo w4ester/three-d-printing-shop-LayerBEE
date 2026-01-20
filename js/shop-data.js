@@ -219,8 +219,21 @@ const ShopData = {
     }
 };
 
+// ============================================================
+// PAYMENT CONFIGURATION
+// ============================================================
+// Placeholder values - update with real handles before production
+// See BEADS issue for tracking: "Configure real Venmo/Zelle handles"
+
+const PAYMENT_CONFIG = {
+    venmo: '@YourVenmoHandle',
+    zelle: 'your-email@example.com',
+    instructions: 'Please include your Order ID in the payment memo/note so we can match your payment to your order.'
+};
+
 // Export for use in other scripts
 window.ShopData = ShopData;
 window.SHOP_CATEGORIES = SHOP_CATEGORIES;
 window.SHOP_COLORS = SHOP_COLORS;
 window.SHOP_PRODUCTS = SHOP_PRODUCTS;
+window.PAYMENT_CONFIG = PAYMENT_CONFIG;

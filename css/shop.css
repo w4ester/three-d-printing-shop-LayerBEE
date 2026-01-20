@@ -716,7 +716,78 @@
 
 .order-id {
     font-family: var(--font-mono);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.order-total-display {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-lg);
+}
+
+.order-total-display strong {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+}
+
+/* Payment Instructions */
+.payment-instructions {
+    background: var(--color-bg-alt);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    text-align: left;
+}
+
+.payment-instructions h4 {
+    font-size: 1rem;
+    margin-bottom: var(--space-md);
+    color: var(--color-text);
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.payment-option:last-of-type {
+    border-bottom: none;
+}
+
+.payment-label {
+    font-weight: 500;
+    color: var(--color-text-muted);
+    min-width: 60px;
+}
+
+.payment-handle {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.payment-memo {
+    margin-top: var(--space-md);
+    padding: var(--space-md);
+    background: rgba(245, 197, 24, 0.15);
+    border-radius: var(--radius-md);
     font-size: 0.9rem;
+    text-align: center;
+}
+
+.payment-memo strong {
+    font-family: var(--font-mono);
+    color: var(--color-primary);
+}
+
+.delivery-info {
+    font-size: 0.85rem;
     color: var(--color-text-muted);
     margin-bottom: var(--space-lg);
 }

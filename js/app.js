@@ -234,6 +234,24 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ============================================================
+// ORDER ID GENERATION
+// ============================================================
+
+/**
+ * Generate a 6-character alphanumeric order ID
+ * Excludes confusing characters: 0/O, 1/I/L
+ * Makes it easier to reference in payment memos
+ */
+function generateOrderId() {
+    const chars = '23456789ABCDEFGHJKMNPQRSTUVWXYZ';
+    let result = '';
+    for (let i = 0; i < 6; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return result;
+}
+
+// ============================================================
 // CART MANAGEMENT
 // ============================================================
 
@@ -333,12 +351,13 @@ const CartManager = {
         if (cart.length === 0) return null;
 
         const order = {
-            id: 'ORD-' + Date.now().toString(36).toUpperCase(),
+            id: generateOrderId(),
             items: cart,
             total: this.getTotal(),
             customerName: customerInfo.name,
+            customerContact: customerInfo.contact || '',
             customerNote: customerInfo.note || '',
-            status: 'pending_review',
+            status: 'pending_payment',
             createdAt: Date.now()
         };
 
@@ -356,7 +375,7 @@ const CartManager = {
     },
 
     getPendingOrders() {
-        return this.getOrders().filter(o => o.status === 'pending_review');
+        return this.getOrders().filter(o => o.status === 'pending_payment' || o.status === 'pending_review');
     }
 };
 

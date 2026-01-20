@@ -673,6 +673,22 @@ const ShopUI = {
         nameField.appendChild(nameInput);
         form.appendChild(nameField);
 
+        // Contact field (classroom/period for in-school delivery)
+        const contactField = document.createElement('div');
+        contactField.className = 'form-field';
+        const contactLabel = document.createElement('label');
+        contactLabel.htmlFor = 'customer-contact';
+        contactLabel.textContent = 'Classroom/Period *';
+        contactField.appendChild(contactLabel);
+        const contactInput = document.createElement('input');
+        contactInput.type = 'text';
+        contactInput.id = 'customer-contact';
+        contactInput.name = 'contact';
+        contactInput.required = true;
+        contactInput.placeholder = 'e.g., Room 204, Period 3';
+        contactField.appendChild(contactInput);
+        form.appendChild(contactField);
+
         // Note field
         const noteField = document.createElement('div');
         noteField.className = 'form-field';
@@ -735,9 +751,11 @@ const ShopUI = {
 
     submitOrder() {
         const nameInput = document.getElementById('customer-name');
+        const contactInput = document.getElementById('customer-contact');
         const noteInput = document.getElementById('customer-note');
 
         const name = nameInput.value.trim();
+        const contact = contactInput.value.trim();
         const note = noteInput.value.trim();
 
         if (!name) {
@@ -746,7 +764,13 @@ const ShopUI = {
             return;
         }
 
-        const order = CartManager.submitOrder({ name, note });
+        if (!contact) {
+            alert('Please enter your classroom/period for delivery');
+            contactInput.focus();
+            return;
+        }
+
+        const order = CartManager.submitOrder({ name, contact, note });
 
         if (order) {
             this.showOrderSuccess(order);
@@ -779,11 +803,68 @@ const ShopUI = {
         orderId.textContent = 'Order ID: ' + order.id;
         successDiv.appendChild(orderId);
 
-        const message = document.createElement('p');
-        message.style.color = 'var(--color-text-muted)';
-        message.style.marginBottom = 'var(--space-lg)';
-        message.textContent = 'Your order has been saved and is waiting for parent review.';
-        successDiv.appendChild(message);
+        // Order total display
+        const totalDiv = document.createElement('p');
+        totalDiv.className = 'order-total-display';
+        totalDiv.appendChild(document.createTextNode('Total: '));
+        const totalStrong = document.createElement('strong');
+        totalStrong.textContent = ShopData.formatPrice(order.total);
+        totalDiv.appendChild(totalStrong);
+        successDiv.appendChild(totalDiv);
+
+        // Payment instructions section
+        const paymentSection = document.createElement('div');
+        paymentSection.className = 'payment-instructions';
+
+        const paymentHeading = document.createElement('h4');
+        paymentHeading.textContent = 'Complete Your Payment';
+        paymentSection.appendChild(paymentHeading);
+
+        // Venmo option
+        const venmoOption = document.createElement('div');
+        venmoOption.className = 'payment-option';
+        const venmoLabel = document.createElement('span');
+        venmoLabel.className = 'payment-label';
+        venmoLabel.textContent = 'Venmo:';
+        const venmoHandle = document.createElement('span');
+        venmoHandle.className = 'payment-handle';
+        venmoHandle.textContent = PAYMENT_CONFIG.venmo;
+        venmoOption.appendChild(venmoLabel);
+        venmoOption.appendChild(document.createTextNode(' '));
+        venmoOption.appendChild(venmoHandle);
+        paymentSection.appendChild(venmoOption);
+
+        // Zelle option
+        const zelleOption = document.createElement('div');
+        zelleOption.className = 'payment-option';
+        const zelleLabel = document.createElement('span');
+        zelleLabel.className = 'payment-label';
+        zelleLabel.textContent = 'Zelle:';
+        const zelleHandle = document.createElement('span');
+        zelleHandle.className = 'payment-handle';
+        zelleHandle.textContent = PAYMENT_CONFIG.zelle;
+        zelleOption.appendChild(zelleLabel);
+        zelleOption.appendChild(document.createTextNode(' '));
+        zelleOption.appendChild(zelleHandle);
+        paymentSection.appendChild(zelleOption);
+
+        // Payment memo reminder
+        const memoReminder = document.createElement('div');
+        memoReminder.className = 'payment-memo';
+        memoReminder.appendChild(document.createTextNode('Include '));
+        const memoOrderId = document.createElement('strong');
+        memoOrderId.textContent = order.id;
+        memoReminder.appendChild(memoOrderId);
+        memoReminder.appendChild(document.createTextNode(' in your payment memo'));
+        paymentSection.appendChild(memoReminder);
+
+        successDiv.appendChild(paymentSection);
+
+        // Delivery info
+        const deliveryInfo = document.createElement('p');
+        deliveryInfo.className = 'delivery-info';
+        deliveryInfo.textContent = 'Your order will be delivered to you once payment is confirmed.';
+        successDiv.appendChild(deliveryInfo);
 
         const continueBtn = document.createElement('button');
         continueBtn.className = 'btn btn-primary';
