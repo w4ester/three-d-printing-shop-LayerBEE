@@ -190,9 +190,21 @@ const ShopData = {
 
     /**
      * Get product image path for a specific color
-     * Returns real image if available, or null if only emoji should be used
+     * Uses WebP format (97%+ browser support as of 2024)
+     * Falls back to PNG only for very old browsers via onerror
      */
     getProductImagePath(product, colorKey) {
+        if (product.hasImages && product.hasImages.includes(colorKey)) {
+            // Use WebP - supported by all modern browsers (Chrome, Firefox, Safari 14+, Edge)
+            return `../images/products/${product.imageFolder}/${colorKey}.webp`;
+        }
+        return null;
+    },
+
+    /**
+     * Get PNG fallback path (for onerror handlers)
+     */
+    getProductImageFallback(product, colorKey) {
         if (product.hasImages && product.hasImages.includes(colorKey)) {
             return `../images/products/${product.imageFolder}/${colorKey}.png`;
         }

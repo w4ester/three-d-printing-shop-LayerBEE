@@ -16,3 +16,6 @@ Thumbs.db
 
 # Build tools (contains explicit word lists for content filter)
 tools/
+
+# Original unoptimized images (600MB+ backup)
+images/products-original/

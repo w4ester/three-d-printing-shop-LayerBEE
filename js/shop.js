@@ -118,12 +118,19 @@ const ShopUI = {
         const imagePath = ShopData.getProductImagePath(product, selectedColorKey);
 
         if (imagePath) {
-            // Use real product image
+            // Use real product image (WebP with PNG fallback)
             const img = document.createElement('img');
             img.className = 'product-image';
             img.src = imagePath;
             img.alt = product.name + ' in ' + options.color.name;
             img.loading = 'lazy';
+            // Fallback to PNG if WebP fails (very old browsers)
+            img.onerror = function() {
+                const fallback = ShopData.getProductImageFallback(product, selectedColorKey);
+                if (fallback && this.src !== fallback) {
+                    this.src = fallback;
+                }
+            };
             header.appendChild(img);
         } else {
             // Fall back to emoji
@@ -528,6 +535,13 @@ const ShopUI = {
             img.className = 'cart-item-image';
             img.src = imagePath;
             img.alt = item.name + ' in ' + item.color;
+            // Fallback to PNG if WebP fails
+            img.onerror = function() {
+                const fallback = product ? ShopData.getProductImageFallback(product, colorKey) : null;
+                if (fallback && this.src !== fallback) {
+                    this.src = fallback;
+                }
+            };
             div.appendChild(img);
         } else {
             const iconSpan = document.createElement('span');
